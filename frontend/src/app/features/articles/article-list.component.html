@@ -17,10 +17,7 @@
   </div>
 
   <div class="indice" *ngSwitchCase="'indice'">
-    <header>
-      <h1>{{ 'nav.articles' | t }}</h1>
-      <p>{{ 'page.pending' | t }}</p>
-    </header>
+    <figure class="shot plate"><p>{{ 'home.phLibrary' | t }}</p></figure>
     <a *ngFor="let post of posts; let i = index" [routerLink]="['/artigos', post.slug]">
       <span>0{{ i + 1 }}</span>
       <strong>{{ post.title }}</strong>
@@ -29,7 +26,7 @@
   </div>
 
   <div class="lamina" *ngSwitchCase="'lamina'">
-    <h1>{{ 'nav.articles' | t }}</h1>
+    <figure class="shot plate"><p>{{ 'home.phPages' | t }}</p></figure>
     <a *ngFor="let post of posts" [routerLink]="['/artigos', post.slug]">
       <strong>{{ post.title }}</strong>
       <span>{{ post.excerpt }}</span>

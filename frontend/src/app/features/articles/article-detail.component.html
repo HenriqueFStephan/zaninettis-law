@@ -10,6 +10,7 @@
   </div>
 
   <div class="indice" *ngSwitchCase="'indice'">
+    <figure class="shot plate"><p>{{ 'home.phPages' | t }}</p></figure>
     <a routerLink="/artigos">{{ 'nav.articles' | t }}</a>
     <h1>{{ post.title }}</h1>
     <p>{{ post.excerpt }}</p>
@@ -17,6 +18,7 @@
   </div>
 
   <div class="lamina" *ngSwitchCase="'lamina'">
+    <figure class="shot plate"><p>{{ 'home.phLibrary' | t }}</p></figure>
     <a routerLink="/artigos">{{ 'nav.articles' | t }}</a>
     <h1>{{ post.title }}</h1>
     <p class="bar">{{ post.excerpt }}</p>

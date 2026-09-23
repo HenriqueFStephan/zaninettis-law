@@ -145,7 +145,26 @@ h1 {
 .indice {
   width: min(1100px, calc(100% - 3rem));
   margin: 0 auto;
-  padding-top: 1.5rem;
+  padding: 1.2rem 0 1.5rem;
+}
+
+.fold {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: 1rem;
+}
+
+.fold app-mark {
+  transform: scale(1.8);
+  margin: 0.4rem 0.6rem 0 0.2rem;
+}
+
+.ph.wide,
+.ph.slab {
+  min-height: 14rem;
+  margin-bottom: 1rem;
 }
 
 .mast {

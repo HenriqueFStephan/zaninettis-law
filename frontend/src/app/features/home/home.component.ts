@@ -4,6 +4,7 @@ import { RouterLink } from '@angular/router';
 
 import { DesignService, LAYOUTS, PALETTES } from '../../core/design.service';
 import { I18nService, TranslatePipe } from '../../core/i18n';
+import { MarkComponent } from '../../shared/mark/mark.component';
 
 interface Area {
   n: string;
@@ -13,7 +14,7 @@ interface Area {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, TranslatePipe],
+  imports: [CommonModule, RouterLink, TranslatePipe, MarkComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })

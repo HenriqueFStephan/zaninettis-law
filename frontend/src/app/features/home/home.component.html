@@ -32,11 +32,15 @@
   </div>
 
   <div class="indice" *ngSwitchCase="'indice'">
-    <header class="mast">
-      <p>{{ 'home.kicker' | t }}</p>
-      <h1>Zaninettis</h1>
-      <p>{{ 'footer.city' | t }}</p>
-    </header>
+    <div class="fold">
+      <app-mark name="ring"></app-mark>
+      <div>
+        <p class="kicker">{{ 'footer.city' | t }}</p>
+        <h1>Zaninettis</h1>
+        <p class="lead">{{ 'home.line' | t }}</p>
+      </div>
+    </div>
+    <figure class="ph wide"><p>{{ 'home.phLibrary' | t }}</p></figure>
     <div class="split">
       <ol>
         <li *ngFor="let area of areas">
@@ -56,6 +60,7 @@
   <div class="lamina" *ngSwitchCase="'lamina'">
     <p class="eyebrow">{{ 'home.kicker' | t }} · {{ 'footer.city' | t }}</p>
     <h1>Zaninettis</h1>
+    <figure class="ph slab"><p>{{ 'home.phFacade' | t }}</p></figure>
     <p class="slash">{{ 'home.line' | t }}</p>
     <nav>
       <a *ngFor="let area of areas" routerLink="/atuacao">

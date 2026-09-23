@@ -12,10 +12,7 @@
   </div>
 
   <div class="indice" *ngSwitchCase="'indice'">
-    <header>
-      <h1>{{ 'nav.updates' | t }}</h1>
-      <p>{{ 'page.pending' | t }}</p>
-    </header>
+    <figure class="shot plate"><p>{{ 'home.phCity' | t }}</p></figure>
     <article *ngFor="let item of items">
       <strong>{{ item.title }}</strong>
       <p>{{ item.summary }}</p>
@@ -24,7 +21,7 @@
   </div>
 
   <div class="lamina" *ngSwitchCase="'lamina'">
-    <h1>{{ 'nav.updates' | t }}</h1>
+    <figure class="shot plate"><p>{{ 'home.phFacade' | t }}</p></figure>
     <article *ngFor="let item of items">
       <h2>{{ item.title }}</h2>
       <p>{{ item.summary }}</p>

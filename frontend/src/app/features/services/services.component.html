@@ -16,11 +16,9 @@
   </div>
 
   <div class="indice" *ngSwitchCase="'indice'">
-    <header>
-      <h1>{{ 'nav.services' | t }}</h1>
-      <p>{{ 'page.pending' | t }}</p>
-    </header>
-    <div class="row" *ngFor="let service of services">
+    <figure class="shot plate"><p>{{ 'home.phPages' | t }}</p></figure>
+    <div class="row" *ngFor="let service of services; let i = index">
+      <app-mark [name]="marks[i % marks.length]"></app-mark>
       <strong>{{ service.title }}</strong>
       <span>{{ service.highlights.join(' · ') }}</span>
       <button type="button" (click)="pick(service.id)">{{ 'services.inquire' | t }}</button>
@@ -30,9 +28,9 @@
   </div>
 
   <div class="lamina" *ngSwitchCase="'lamina'">
-    <h1>{{ 'nav.services' | t }}</h1>
+    <figure class="shot plate"><p>{{ 'home.phRoom' | t }}</p></figure>
     <article *ngFor="let service of services; let i = index">
-      <h2><span>0{{ i + 1 }}</span>{{ service.title }}</h2>
+      <h2><app-mark [name]="marks[i % marks.length]"></app-mark><span>0{{ i + 1 }}</span>{{ service.title }}</h2>
       <p>{{ service.description }}</p>
       <button type="button" (click)="pick(service.id)">{{ 'services.inquire' | t }}</button>
     </article>
