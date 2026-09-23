@@ -1,0 +1,39 @@
+<article *ngIf="post" [ngSwitch]="design.layout()">
+  <div class="galeria" *ngSwitchCase="'galeria'">
+    <figure class="shot hero"><p>{{ 'home.phPages' | t }}</p></figure>
+    <div class="copy">
+      <a routerLink="/artigos">{{ 'nav.articles' | t }}</a>
+      <h1>{{ post.title }}</h1>
+      <p class="deck">{{ post.excerpt }}</p>
+      <div class="body">{{ post.content_markdown }}</div>
+    </div>
+  </div>
+
+  <div class="indice" *ngSwitchCase="'indice'">
+    <a routerLink="/artigos">{{ 'nav.articles' | t }}</a>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.excerpt }}</p>
+    <div class="body">{{ post.content_markdown }}</div>
+  </div>
+
+  <div class="lamina" *ngSwitchCase="'lamina'">
+    <a routerLink="/artigos">{{ 'nav.articles' | t }}</a>
+    <h1>{{ post.title }}</h1>
+    <p class="bar">{{ post.excerpt }}</p>
+    <div class="body">{{ post.content_markdown }}</div>
+  </div>
+
+  <div class="revista" *ngSwitchCase="'revista'">
+    <a routerLink="/artigos">{{ 'home.issue' | t }}</a>
+    <h1>{{ post.title }}</h1>
+    <p class="deck">{{ post.excerpt }}</p>
+    <div class="body">{{ post.content_markdown }}</div>
+  </div>
+
+  <div class="painel" *ngSwitchCase="'painel'">
+    <a routerLink="/artigos">{{ 'nav.articles' | t }}</a>
+    <h1>{{ post.title }}</h1>
+    <p>{{ post.excerpt }}</p>
+    <div class="body">{{ post.content_markdown }}</div>
+  </div>
+</article>

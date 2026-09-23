@@ -1,0 +1,65 @@
+<ng-container [ngSwitch]="design.layout()">
+  <header class="g" *ngSwitchCase="'galeria'">
+    <a routerLink="/" (click)="open = false">Zaninettis</a>
+    <button type="button" (click)="open = !open">{{ (open ? 'nav.close' : 'nav.menu') | t }}</button>
+    <div class="sheet" *ngIf="open">
+      <a routerLink="/" routerLinkActive="on" [routerLinkActiveOptions]="{ exact: true }" (click)="open = false">{{ 'nav.home' | t }}</a>
+      <a routerLink="/atuacao" routerLinkActive="on" (click)="open = false">{{ 'nav.services' | t }}</a>
+      <a routerLink="/artigos" routerLinkActive="on" (click)="open = false">{{ 'nav.articles' | t }}</a>
+      <a routerLink="/atualizacoes" routerLinkActive="on" (click)="open = false">{{ 'nav.updates' | t }}</a>
+      <a routerLink="/contato" routerLinkActive="on" (click)="open = false">{{ 'nav.contact' | t }}</a>
+      <button type="button" class="lang" (click)="toggleLang()">{{ i18n.lang() === 'pt-BR' ? 'EN' : 'PT' }}</button>
+    </div>
+  </header>
+
+  <header class="i" *ngSwitchCase="'indice'">
+    <div class="i-top">
+      <span>{{ 'footer.city' | t }}</span>
+      <a routerLink="/">Zaninettis</a>
+      <button type="button" (click)="toggleLang()">{{ i18n.lang() === 'pt-BR' ? 'English' : 'Português' }}</button>
+    </div>
+    <nav>
+      <a routerLink="/" routerLinkActive="on" [routerLinkActiveOptions]="{ exact: true }"><span>01</span>{{ 'nav.home' | t }}</a>
+      <a routerLink="/atuacao" routerLinkActive="on"><span>02</span>{{ 'nav.services' | t }}</a>
+      <a routerLink="/artigos" routerLinkActive="on"><span>03</span>{{ 'nav.articles' | t }}</a>
+      <a routerLink="/atualizacoes" routerLinkActive="on"><span>04</span>{{ 'nav.updates' | t }}</a>
+      <a routerLink="/contato" routerLinkActive="on"><span>05</span>{{ 'nav.contact' | t }}</a>
+    </nav>
+  </header>
+
+  <nav class="l" *ngSwitchCase="'lamina'" [attr.aria-label]="'nav.menu' | t">
+    <a class="name" routerLink="/" routerLinkActive="on" [routerLinkActiveOptions]="{ exact: true }">Zaninettis</a>
+    <a routerLink="/atuacao" routerLinkActive="on">{{ 'nav.services' | t }}</a>
+    <a routerLink="/artigos" routerLinkActive="on">{{ 'nav.articles' | t }}</a>
+    <a routerLink="/atualizacoes" routerLinkActive="on">{{ 'nav.updates' | t }}</a>
+    <a routerLink="/contato" routerLinkActive="on">{{ 'nav.contact' | t }}</a>
+    <button type="button" (click)="toggleLang()">{{ i18n.lang() === 'pt-BR' ? 'EN' : 'PT' }}</button>
+  </nav>
+
+  <header class="r" *ngSwitchCase="'revista'">
+    <div class="meta">
+      <span>{{ 'footer.city' | t }}</span>
+      <span>{{ 'home.issue' | t }}</span>
+      <button type="button" (click)="toggleLang()">{{ i18n.lang() === 'pt-BR' ? 'EN' : 'PT' }}</button>
+    </div>
+    <a class="plate" routerLink="/">Zaninettis</a>
+    <nav>
+      <a routerLink="/" routerLinkActive="on" [routerLinkActiveOptions]="{ exact: true }">{{ 'nav.home' | t }}</a>
+      <a routerLink="/atuacao" routerLinkActive="on">{{ 'nav.services' | t }}</a>
+      <a routerLink="/artigos" routerLinkActive="on">{{ 'nav.articles' | t }}</a>
+      <a routerLink="/atualizacoes" routerLinkActive="on">{{ 'nav.updates' | t }}</a>
+      <a routerLink="/contato" routerLinkActive="on">{{ 'nav.contact' | t }}</a>
+    </nav>
+  </header>
+
+  <aside class="p" *ngSwitchCase="'painel'">
+    <a class="name" routerLink="/">Zaninettis</a>
+    <a routerLink="/" routerLinkActive="on" [routerLinkActiveOptions]="{ exact: true }"><span>01</span>{{ 'nav.home' | t }}</a>
+    <a routerLink="/atuacao" routerLinkActive="on"><span>02</span>{{ 'nav.services' | t }}</a>
+    <a routerLink="/artigos" routerLinkActive="on"><span>03</span>{{ 'nav.articles' | t }}</a>
+    <a routerLink="/atualizacoes" routerLinkActive="on"><span>04</span>{{ 'nav.updates' | t }}</a>
+    <a routerLink="/contato" routerLinkActive="on"><span>05</span>{{ 'nav.contact' | t }}</a>
+    <button type="button" (click)="toggleLang()">{{ i18n.lang() === 'pt-BR' ? 'EN' : 'PT' }}</button>
+    <p>{{ 'footer.city' | t }}</p>
+  </aside>
+</ng-container>

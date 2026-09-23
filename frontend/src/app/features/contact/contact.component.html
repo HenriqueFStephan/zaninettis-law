@@ -1,0 +1,42 @@
+<section [ngSwitch]="design.layout()">
+  <div class="galeria" *ngSwitchCase="'galeria'">
+    <figure class="shot"><p>{{ 'home.phRoom' | t }}</p></figure>
+    <div>
+      <h1>{{ 'nav.contact' | t }}</h1>
+      <ng-container [ngTemplateOutlet]="form"></ng-container>
+    </div>
+  </div>
+
+  <div class="indice" *ngSwitchCase="'indice'">
+    <h1>{{ 'nav.contact' | t }}</h1>
+    <p>{{ 'page.pending' | t }}</p>
+    <ng-container [ngTemplateOutlet]="form"></ng-container>
+  </div>
+
+  <div class="lamina" *ngSwitchCase="'lamina'">
+    <h1>{{ 'nav.contact' | t }}</h1>
+    <ng-container [ngTemplateOutlet]="form"></ng-container>
+  </div>
+
+  <div class="revista" *ngSwitchCase="'revista'">
+    <p class="kicker">{{ 'home.issue' | t }}</p>
+    <h1>{{ 'nav.contact' | t }}</h1>
+    <ng-container [ngTemplateOutlet]="form"></ng-container>
+  </div>
+
+  <div class="painel" *ngSwitchCase="'painel'">
+    <h1>{{ 'nav.contact' | t }}</h1>
+    <ng-container [ngTemplateOutlet]="form"></ng-container>
+  </div>
+</section>
+
+<ng-template #form>
+  <form (ngSubmit)="send()">
+    <label>{{ 'contact.name' | t }}<input name="name" [(ngModel)]="name" required /></label>
+    <label>{{ 'contact.email' | t }}<input type="email" name="email" [(ngModel)]="email" required /></label>
+    <label>{{ 'contact.subject' | t }}<input name="subject" [(ngModel)]="subject" required /></label>
+    <label>{{ 'contact.message' | t }}<textarea name="message" [(ngModel)]="message" required minlength="10"></textarea></label>
+    <button type="submit" [disabled]="sending">{{ sending ? ('contact.sending' | t) : ('contact.send' | t) }}</button>
+    <p class="notice" *ngIf="notice">{{ notice }}</p>
+  </form>
+</ng-template>

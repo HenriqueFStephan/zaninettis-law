@@ -1,0 +1,40 @@
+:host { display: block; }
+h1 { margin: 0; }
+a { color: var(--seal); }
+
+.galeria { width: min(1100px, calc(100% - 2rem)); margin: 0 auto 2rem; }
+.galeria h1 { font-size: clamp(3rem, 7vw, 5rem); font-weight: 700; letter-spacing: -0.04em; }
+.galeria article { display: grid; grid-template-columns: 16rem 1fr; gap: 1rem; margin-top: 0.8rem; }
+.galeria .shot { min-height: 10rem; }
+.galeria h2 { margin: 0 0 0.3rem; font-size: 1.8rem; }
+.galeria p { color: var(--mute); }
+
+.indice { width: min(860px, calc(100% - 2.5rem)); margin: 1.4rem auto 2rem; }
+.indice header { padding-bottom: 0.7rem; border-bottom: 8px solid var(--ink); }
+.indice h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); }
+.indice header p { color: var(--mute); }
+.indice article { display: grid; grid-template-columns: 1fr auto; gap: 0.3rem 1rem; padding: 0.85rem 0; border-bottom: 1px solid var(--line); }
+.indice strong { font-family: var(--display); font-size: 1.3rem; }
+.indice p { grid-column: 1 / -1; margin: 0; color: var(--mute); }
+
+.lamina { width: min(100% - 1.2rem, 1200px); margin: 0 auto 2rem; }
+.lamina h1 { font-size: clamp(3.2rem, 8vw, 6rem); font-weight: 400; line-height: 1; text-transform: uppercase; }
+.lamina article { border-top: 3px solid var(--ink); padding: 0.5rem 0; }
+.lamina h2 { margin: 0; font-size: clamp(2rem, 5vw, 3.6rem); font-weight: 400; text-transform: uppercase; }
+.lamina p { max-width: 36rem; color: var(--mute); }
+
+.revista { width: min(720px, calc(100% - 2rem)); margin: 1rem auto 2rem; }
+.revista h1 { font-size: clamp(2.8rem, 6vw, 4.4rem); border-bottom: 4px solid var(--ink); }
+.lead h2 { font-size: clamp(2rem, 4vw, 3rem); }
+.revista article { padding: 0.9rem 0; border-bottom: 1px solid var(--ink); }
+.revista h2 { margin: 0 0 0.3rem; }
+.revista p { color: var(--mute); }
+
+.painel { display: grid; gap: 0.55rem; width: min(100% - 1.2rem, 820px); margin: 1rem auto 2rem; }
+.painel article { padding: 0.9rem; border: 1px solid var(--line); background: var(--surface); }
+.painel h2 { margin: 0 0 0.35rem; font-family: var(--mono); font-size: 1rem; letter-spacing: 0.05em; text-transform: uppercase; }
+.painel p { margin: 0; color: var(--mute); }
+
+@media (max-width: 800px) {
+  .galeria article { grid-template-columns: 1fr; }
+}

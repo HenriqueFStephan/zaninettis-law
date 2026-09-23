@@ -1,0 +1,21 @@
+<ng-container [ngSwitch]="design.layout()">
+  <footer class="g" *ngSwitchCase="'galeria'">
+    <p>{{ 'home.phFacade' | t }}</p>
+    <span>{{ 'footer.city' | t }}</span>
+  </footer>
+
+  <footer class="i" *ngSwitchCase="'indice'">
+    <strong>Zaninettis</strong>
+    <p>{{ 'footer.note' | t }}</p>
+    <span>{{ 'footer.city' | t }}</span>
+  </footer>
+
+  <footer class="l" *ngSwitchCase="'lamina'">
+    <span>{{ 'footer.city' | t }}</span>
+  </footer>
+
+  <footer class="r" *ngSwitchCase="'revista'">
+    <p>{{ 'footer.note' | t }}</p>
+    <span>Zaninettis — {{ 'footer.city' | t }}</span>
+  </footer>
+</ng-container>

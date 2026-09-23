@@ -1,75 +1,121 @@
-<section class="stage" [attr.data-layout]="design.layout()">
-  <div class="indice" *ngIf="design.layout() === 'indice'">
-    <aside>
-      <p class="kicker">{{ 'home.kicker' | t }}</p>
-      <p class="aside-name">Zaninettis</p>
-      <p class="aside-city">{{ 'footer.city' | t }}</p>
-    </aside>
-    <div>
+<section class="stage" [ngSwitch]="design.layout()">
+  <div class="galeria" *ngSwitchCase="'galeria'">
+    <div class="hero">
+      <div class="ph hero-ph">
+        <p>{{ 'home.phFacade' | t }}</p>
+      </div>
+      <div class="hero-copy">
+        <p class="where">{{ 'footer.city' | t }}</p>
+        <h1>Zaninettis</h1>
+        <p class="hero-line">{{ 'home.line' | t }}</p>
+      </div>
+    </div>
+    <div class="strip">
+      <a *ngFor="let area of areas" routerLink="/atuacao">{{ area.name }}</a>
+    </div>
+    <div class="mosaic">
+      <figure class="ph tall">
+        <p>{{ 'home.phRoom' | t }}</p>
+      </figure>
+      <div class="mosaic-side">
+        <figure class="ph short">
+          <p>{{ 'home.phPages' | t }}</p>
+        </figure>
+        <div class="notes">
+          <p class="kicker">{{ 'home.notesTitle' | t }}</p>
+          <p>{{ 'home.note1' | t }}</p>
+          <p>{{ 'home.note2' | t }}</p>
+          <p>{{ 'home.note3' | t }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="indice" *ngSwitchCase="'indice'">
+    <header class="mast">
+      <p>{{ 'home.kicker' | t }}</p>
+      <h1>Zaninettis</h1>
+      <p>{{ 'footer.city' | t }}</p>
+    </header>
+    <div class="split">
       <ol>
         <li *ngFor="let area of areas">
           <span>{{ area.n }}</span>
           <a routerLink="/atuacao">{{ area.name }}</a>
         </li>
       </ol>
+      <aside>
+        <p class="kicker">{{ 'home.notesTitle' | t }}</p>
+        <p>{{ 'home.note1' | t }}</p>
+        <p>{{ 'home.note2' | t }}</p>
+        <p>{{ 'home.note3' | t }}</p>
+      </aside>
     </div>
   </div>
 
-  <div class="portico" *ngIf="design.layout() === 'portico'">
-    <div class="portico__statement">
-      <p class="kicker">Zaninettis</p>
-      <h1>{{ 'home.line' | t }}</h1>
-    </div>
-    <div class="rail">
+  <div class="lamina" *ngSwitchCase="'lamina'">
+    <p class="eyebrow">{{ 'home.kicker' | t }} · {{ 'footer.city' | t }}</p>
+    <h1>Zaninettis</h1>
+    <p class="slash">{{ 'home.line' | t }}</p>
+    <nav>
       <a *ngFor="let area of areas" routerLink="/atuacao">
         <span>{{ area.n }}</span>
         {{ area.name }}
       </a>
-    </div>
+    </nav>
   </div>
 
-  <div class="dossie" *ngIf="design.layout() === 'dossie'">
-    <div>
-      <p class="kicker">{{ 'home.kicker' | t }}</p>
-      <h1>Zaninettis</h1>
-      <p class="lead">{{ 'home.line' | t }}</p>
+  <div class="revista" *ngSwitchCase="'revista'">
+    <div class="cover">
+      <div>
+        <p class="issue">{{ 'home.issue' | t }}</p>
+        <h1>{{ 'home.cover' | t }}</h1>
+        <p class="dek">{{ 'home.line' | t }}</p>
+      </div>
+      <figure class="ph">
+        <p>{{ 'home.phLibrary' | t }}</p>
+      </figure>
     </div>
-    <div>
-      <p class="kicker">{{ 'home.notesTitle' | t }}</p>
-      <article><span>01</span>{{ 'home.note1' | t }}</article>
-      <article><span>02</span>{{ 'home.note2' | t }}</article>
-      <article><span>03</span>{{ 'home.note3' | t }}</article>
+    <div class="cols">
+      <article>
+        <span>01</span>
+        <h2>{{ 'home.notesTitle' | t }}</h2>
+        <p>{{ 'home.note1' | t }}</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h2>{{ 'nav.updates' | t }}</h2>
+        <p>{{ 'home.note2' | t }}</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h2>{{ 'nav.articles' | t }}</h2>
+        <p>{{ 'home.note3' | t }}</p>
+      </article>
     </div>
+    <p class="index-line">
+      <a *ngFor="let area of areas" routerLink="/atuacao">{{ area.name }}</a>
+    </p>
   </div>
 
-  <div class="atlas" *ngIf="design.layout() === 'atlas'">
-    <header>
-      <h1>Zaninettis</h1>
-      <p>{{ 'home.atlasLead' | t }}</p>
-    </header>
-    <div class="grid">
-      <a *ngFor="let area of areas" routerLink="/atuacao">
+  <div class="painel" *ngSwitchCase="'painel'">
+    <div class="modules">
+      <div class="mod span2">
+        <p class="kicker">{{ 'home.kicker' | t }}</p>
+        <p class="statement">{{ 'home.line' | t }}</p>
+      </div>
+      <figure class="mod ph">
+        <p>{{ 'home.phCity' | t }}</p>
+      </figure>
+      <a class="mod" *ngFor="let area of areas" routerLink="/atuacao">
         <span>{{ area.n }}</span>
         <strong>{{ area.name }}</strong>
       </a>
-      <a class="contact" routerLink="/contato">
+      <a class="mod accent" routerLink="/contato">
         <span>06</span>
         <strong>{{ 'home.contactCue' | t }}</strong>
       </a>
     </div>
-  </div>
-
-  <div class="carta" *ngIf="design.layout() === 'carta'">
-    <p class="kicker">{{ 'home.letterDate' | t }}</p>
-    <h1>{{ 'home.letterOpen' | t }}</h1>
-    <p>{{ 'home.letterBody' | t }}</p>
-    <dl>
-      <div *ngFor="let area of areas">
-        <dt>{{ area.n }}</dt>
-        <dd>{{ area.name }}</dd>
-      </div>
-    </dl>
-    <p class="sign">{{ 'home.signature' | t }}</p>
   </div>
 </section>
 
@@ -99,12 +145,12 @@
         *ngFor="let palette of palettes"
         [class.on]="design.palette() === palette.id"
         [attr.aria-label]="paletteName(palette.id)"
-        [attr.title]="paletteName(palette.id)"
         (click)="design.setPalette(palette.id)"
       >
         <i [style.background]="palette.paper"></i>
         <i [style.background]="palette.ink"></i>
         <i [style.background]="palette.seal"></i>
+        <em>{{ paletteName(palette.id) }}</em>
       </button>
     </div>
   </div>

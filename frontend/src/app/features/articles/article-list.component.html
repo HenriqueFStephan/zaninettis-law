@@ -1,0 +1,57 @@
+<section [ngSwitch]="design.layout()">
+  <div class="galeria" *ngSwitchCase="'galeria'">
+    <h1>{{ 'nav.articles' | t }}</h1>
+    <a class="feature" *ngIf="posts[0]" [routerLink]="['/artigos', posts[0].slug]">
+      <figure class="shot"><p>{{ 'home.phLibrary' | t }}</p></figure>
+      <div>
+        <h2>{{ posts[0].title }}</h2>
+        <p>{{ posts[0].excerpt }}</p>
+      </div>
+    </a>
+    <div class="rest">
+      <a *ngFor="let post of posts.slice(1)" [routerLink]="['/artigos', post.slug]">
+        <strong>{{ post.title }}</strong>
+        <span>{{ post.excerpt }}</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="indice" *ngSwitchCase="'indice'">
+    <header>
+      <h1>{{ 'nav.articles' | t }}</h1>
+      <p>{{ 'page.pending' | t }}</p>
+    </header>
+    <a *ngFor="let post of posts; let i = index" [routerLink]="['/artigos', post.slug]">
+      <span>0{{ i + 1 }}</span>
+      <strong>{{ post.title }}</strong>
+      <em>{{ post.excerpt }}</em>
+    </a>
+  </div>
+
+  <div class="lamina" *ngSwitchCase="'lamina'">
+    <h1>{{ 'nav.articles' | t }}</h1>
+    <a *ngFor="let post of posts" [routerLink]="['/artigos', post.slug]">
+      <strong>{{ post.title }}</strong>
+      <span>{{ post.excerpt }}</span>
+    </a>
+  </div>
+
+  <div class="revista" *ngSwitchCase="'revista'">
+    <p class="kicker">{{ 'home.issue' | t }}</p>
+    <h1>{{ 'nav.articles' | t }}</h1>
+    <div class="cols">
+      <a *ngFor="let post of posts" [routerLink]="['/artigos', post.slug]">
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.excerpt }}</p>
+      </a>
+    </div>
+  </div>
+
+  <div class="painel" *ngSwitchCase="'painel'">
+    <a class="mod" *ngFor="let post of posts; let i = index" [routerLink]="['/artigos', post.slug]">
+      <span>0{{ i + 1 }}</span>
+      <strong>{{ post.title }}</strong>
+      <p>{{ post.excerpt }}</p>
+    </a>
+  </div>
+</section>

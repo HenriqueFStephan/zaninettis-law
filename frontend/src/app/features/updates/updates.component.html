@@ -1,0 +1,56 @@
+<section [ngSwitch]="design.layout()">
+  <div class="galeria" *ngSwitchCase="'galeria'">
+    <h1>{{ 'nav.updates' | t }}</h1>
+    <article *ngFor="let item of items; let i = index">
+      <figure class="shot"><p>{{ shot(i) | t }}</p></figure>
+      <div>
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.summary }}</p>
+        <a *ngIf="item.source_url" [href]="item.source_url" target="_blank" rel="noopener">{{ item.source_name || item.source_url }}</a>
+      </div>
+    </article>
+  </div>
+
+  <div class="indice" *ngSwitchCase="'indice'">
+    <header>
+      <h1>{{ 'nav.updates' | t }}</h1>
+      <p>{{ 'page.pending' | t }}</p>
+    </header>
+    <article *ngFor="let item of items">
+      <strong>{{ item.title }}</strong>
+      <p>{{ item.summary }}</p>
+      <a *ngIf="item.source_url" [href]="item.source_url" target="_blank" rel="noopener">{{ item.source_name || item.source_url }}</a>
+    </article>
+  </div>
+
+  <div class="lamina" *ngSwitchCase="'lamina'">
+    <h1>{{ 'nav.updates' | t }}</h1>
+    <article *ngFor="let item of items">
+      <h2>{{ item.title }}</h2>
+      <p>{{ item.summary }}</p>
+      <a *ngIf="item.source_url" [href]="item.source_url" target="_blank" rel="noopener">{{ item.source_name || item.source_url }}</a>
+    </article>
+  </div>
+
+  <div class="revista" *ngSwitchCase="'revista'">
+    <p class="kicker">{{ 'home.issue' | t }}</p>
+    <h1>{{ 'nav.updates' | t }}</h1>
+    <article class="lead" *ngIf="items[0]">
+      <h2>{{ items[0].title }}</h2>
+      <p>{{ items[0].summary }}</p>
+      <a *ngIf="items[0].source_url" [href]="items[0].source_url" target="_blank" rel="noopener">{{ items[0].source_name || items[0].source_url }}</a>
+    </article>
+    <article *ngFor="let item of items.slice(1)">
+      <h2>{{ item.title }}</h2>
+      <p>{{ item.summary }}</p>
+    </article>
+  </div>
+
+  <div class="painel" *ngSwitchCase="'painel'">
+    <article *ngFor="let item of items">
+      <h2>{{ item.title }}</h2>
+      <p>{{ item.summary }}</p>
+      <a *ngIf="item.source_url" [href]="item.source_url" target="_blank" rel="noopener">{{ item.source_name || item.source_url }}</a>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,87 @@
+<section [ngSwitch]="design.layout()">
+  <div class="galeria" *ngSwitchCase="'galeria'">
+    <h1>{{ 'nav.services' | t }}</h1>
+    <article class="band" *ngFor="let service of services; let i = index">
+      <figure class="shot"><p>{{ shot(i) | t }}</p></figure>
+      <div>
+        <h2>{{ service.title }}</h2>
+        <p>{{ service.description }}</p>
+        <ul>
+          <li *ngFor="let item of service.highlights">{{ item }}</li>
+        </ul>
+        <button type="button" (click)="pick(service.id)">{{ 'services.inquire' | t }}</button>
+      </div>
+    </article>
+    <ng-container *ngIf="picked.length"><ng-container [ngTemplateOutlet]="ask"></ng-container></ng-container>
+  </div>
+
+  <div class="indice" *ngSwitchCase="'indice'">
+    <header>
+      <h1>{{ 'nav.services' | t }}</h1>
+      <p>{{ 'page.pending' | t }}</p>
+    </header>
+    <div class="row" *ngFor="let service of services">
+      <strong>{{ service.title }}</strong>
+      <span>{{ service.highlights.join(' · ') }}</span>
+      <button type="button" (click)="pick(service.id)">{{ 'services.inquire' | t }}</button>
+      <p>{{ service.description }}</p>
+    </div>
+    <ng-container *ngIf="picked.length"><ng-container [ngTemplateOutlet]="ask"></ng-container></ng-container>
+  </div>
+
+  <div class="lamina" *ngSwitchCase="'lamina'">
+    <h1>{{ 'nav.services' | t }}</h1>
+    <article *ngFor="let service of services; let i = index">
+      <h2><span>0{{ i + 1 }}</span>{{ service.title }}</h2>
+      <p>{{ service.description }}</p>
+      <button type="button" (click)="pick(service.id)">{{ 'services.inquire' | t }}</button>
+    </article>
+    <ng-container *ngIf="picked.length"><ng-container [ngTemplateOutlet]="ask"></ng-container></ng-container>
+  </div>
+
+  <div class="revista" *ngSwitchCase="'revista'">
+    <p class="kicker">{{ 'home.issue' | t }}</p>
+    <h1>{{ 'nav.services' | t }}</h1>
+    <div class="spread" *ngIf="services.length">
+      <article class="lead">
+        <h2>{{ services[0].title }}</h2>
+        <p>{{ services[0].description }}</p>
+        <button type="button" (click)="pick(services[0].id)">{{ 'services.inquire' | t }}</button>
+      </article>
+      <div>
+        <article *ngFor="let service of services.slice(1)">
+          <h2>{{ service.title }}</h2>
+          <p>{{ service.highlights.join(' · ') }}</p>
+          <button type="button" (click)="pick(service.id)">{{ 'services.inquire' | t }}</button>
+        </article>
+      </div>
+    </div>
+    <ng-container *ngIf="picked.length"><ng-container [ngTemplateOutlet]="ask"></ng-container></ng-container>
+  </div>
+
+  <div class="painel" *ngSwitchCase="'painel'">
+    <article class="mod" *ngFor="let service of services">
+      <h2>{{ service.title }}</h2>
+      <p>{{ service.description }}</p>
+      <ul>
+        <li *ngFor="let item of service.highlights">{{ item }}</li>
+      </ul>
+      <button type="button" (click)="pick(service.id)">{{ 'services.inquire' | t }}</button>
+    </article>
+    <div class="mod wide" *ngIf="picked.length">
+      <ng-container [ngTemplateOutlet]="ask"></ng-container>
+    </div>
+  </div>
+</section>
+
+<ng-template #ask>
+  <form class="ask" (ngSubmit)="send()">
+    <h2>{{ 'services.inquire' | t }}</h2>
+    <label>{{ 'contact.name' | t }}<input name="name" [(ngModel)]="name" required /></label>
+    <label>{{ 'contact.email' | t }}<input type="email" name="email" [(ngModel)]="email" required /></label>
+    <label>{{ 'contact.company' | t }}<input name="company" [(ngModel)]="company" /></label>
+    <label>{{ 'contact.message' | t }}<textarea name="message" [(ngModel)]="message" required minlength="10"></textarea></label>
+    <button type="submit" [disabled]="sending">{{ sending ? ('contact.sending' | t) : ('contact.send' | t) }}</button>
+    <p class="notice" *ngIf="notice">{{ notice }}</p>
+  </form>
+</ng-template>

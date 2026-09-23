@@ -1,0 +1,64 @@
+:host { display: block; }
+h1 { margin: 0; }
+form { display: grid; gap: 0.7rem; }
+label { display: grid; gap: 0.25rem; }
+input, textarea {
+  padding: 0.65rem 0.7rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  color: var(--ink);
+}
+textarea { min-height: 8rem; }
+button {
+  justify-self: start;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  cursor: pointer;
+}
+.notice { color: var(--seal); }
+
+.galeria {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  width: min(1100px, calc(100% - 2rem));
+  min-height: 70vh;
+  margin: 0 auto 2rem;
+}
+.galeria .shot { min-height: 100%; }
+.galeria div { padding: 1.4rem; }
+.galeria h1 { margin-bottom: 1rem; font-size: clamp(2.8rem, 5vw, 4.4rem); font-weight: 700; letter-spacing: -0.04em; }
+.galeria input, .galeria textarea { border: 0; border-bottom: 1px solid var(--ink); border-radius: 0; background: transparent; }
+
+.indice { width: min(40rem, calc(100% - 2.5rem)); margin: 1.6rem auto 2rem; }
+.indice h1 { padding-bottom: 0.5rem; border-bottom: 8px solid var(--ink); font-size: clamp(2.4rem, 5vw, 3.6rem); }
+.indice p { color: var(--mute); }
+.indice label { grid-template-columns: 7.5rem 1fr; align-items: center; }
+
+.lamina { width: min(100% - 1.2rem, 900px); margin: 0 auto 2rem; }
+.lamina h1 { font-size: clamp(3.2rem, 8vw, 6rem); font-weight: 400; line-height: 1; text-transform: uppercase; }
+.lamina input, .lamina textarea {
+  border: 0;
+  border-bottom: 3px solid var(--ink);
+  border-radius: 0;
+  background: transparent;
+  font-size: 1.25rem;
+}
+.lamina button { border: 0; background: var(--seal); color: var(--on-seal); letter-spacing: 0.08em; text-transform: uppercase; }
+
+.revista { width: min(32rem, calc(100% - 2rem)); margin: 1rem auto 2rem; }
+.revista h1 { font-size: clamp(2.8rem, 6vw, 4.2rem); border-bottom: 4px solid var(--ink); margin-bottom: 1rem; }
+
+.painel { display: grid; gap: 0.55rem; width: min(100% - 1.2rem, 720px); margin: 1rem auto 2rem; }
+.painel h1 { padding: 0.8rem; border: 1px solid var(--line); background: var(--surface); font-family: var(--mono); font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.painel form { grid-template-columns: 1fr 1fr; }
+.painel label:nth-child(4),
+.painel label:nth-child(5),
+.painel button,
+.painel .notice { grid-column: 1 / -1; }
+.painel input, .painel textarea { border-radius: 0; }
+
+@media (max-width: 800px) {
+  .galeria, .indice label, .painel form { grid-template-columns: 1fr; }
+}

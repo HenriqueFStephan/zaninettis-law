@@ -1,7 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 
-export type LayoutId = 'indice' | 'portico' | 'dossie' | 'atlas' | 'carta';
-export type PaletteId = 'tinta' | 'laje' | 'noite' | 'argila' | 'biblioteca';
+export type LayoutId = 'galeria' | 'indice' | 'lamina' | 'revista' | 'painel';
+export type PaletteId = 'claro' | 'noite' | 'vinho' | 'marinho' | 'sinal';
 
 export interface LayoutOption {
   id: LayoutId;
@@ -28,99 +28,127 @@ const PALETTE_KEY = 'zaninettis-palette';
 
 export const LAYOUTS: LayoutOption[] = [
   {
+    id: 'galeria',
+    name: 'Galeria',
+    nameEn: 'Gallery',
+    note: 'Foto em tela cheia, faixa de áreas e um mosaico.',
+    noteEn: 'A full-bleed photo, a practice strip, and a mosaic.',
+  },
+  {
     id: 'indice',
     name: 'Índice',
     nameEn: 'Index',
-    note: 'Coluna de identidade e lista numerada.',
-    noteEn: 'Identity column and a numbered list.',
+    note: 'Faixa institucional e diretório em colunas.',
+    noteEn: 'An institutional band and a two-column directory.',
   },
   {
-    id: 'portico',
-    name: 'Pórtico',
-    nameEn: 'Portico',
-    note: 'Uma frase em tela cheia e uma faixa de áreas.',
-    noteEn: 'A full-screen line and a practice rail.',
+    id: 'lamina',
+    name: 'Lâmina',
+    nameEn: 'Poster',
+    note: 'Nome em tipo enorme e uma lista que ocupa a tela.',
+    noteEn: 'An oversized name and a list that fills the screen.',
   },
   {
-    id: 'dossie',
-    name: 'Dossiê',
-    nameEn: 'Dossier',
-    note: 'Manifesto à esquerda e notas empilhadas.',
-    noteEn: 'A statement on the left, stacked notes on the right.',
+    id: 'revista',
+    name: 'Revista',
+    nameEn: 'Magazine',
+    note: 'Capa com foto, três colunas e um índice no rodapé.',
+    noteEn: 'A cover with a photo, three columns, and an index.',
   },
   {
-    id: 'atlas',
-    name: 'Atlas',
-    nameEn: 'Atlas',
-    note: 'Grade de áreas, sem herói.',
-    noteEn: 'A grid of practices, no hero.',
-  },
-  {
-    id: 'carta',
-    name: 'Carta',
-    nameEn: 'Letter',
-    note: 'Coluna estreita, como uma carta.',
-    noteEn: 'A narrow column, like a letter.',
+    id: 'painel',
+    name: 'Painel',
+    nameEn: 'Panel',
+    note: 'Trilho lateral e módulos alinhados.',
+    noteEn: 'A side rail and aligned modules.',
   },
 ];
 
 export const PALETTES: PaletteOption[] = [
   {
-    id: 'tinta',
-    name: 'Tinta',
-    nameEn: 'Ink',
-    ink: '#1a1814',
-    paper: '#f4efe6',
-    seal: '#8c3a2f',
-    mute: '#6f675f',
-    line: '#e4dcd0',
-    surface: '#fbf8f3',
-  },
-  {
-    id: 'laje',
-    name: 'Laje',
-    nameEn: 'Slate',
-    ink: '#1c2830',
-    paper: '#eef2f4',
-    seal: '#8d7344',
-    mute: '#5e6b73',
-    line: '#d5dee3',
-    surface: '#f7f9fa',
+    id: 'claro',
+    name: 'Claro',
+    nameEn: 'Daylight',
+    ink: '#142033',
+    paper: '#f4f7fb',
+    seal: '#1f4e79',
+    mute: '#5c6b7c',
+    line: '#d5deea',
+    surface: '#ffffff',
   },
   {
     id: 'noite',
     name: 'Noite',
     nameEn: 'Night',
-    ink: '#10182a',
-    paper: '#f6f3ee',
-    seal: '#b8733a',
-    mute: '#5c6574',
-    line: '#e3ddd4',
-    surface: '#fbf9f6',
+    ink: '#f4f0e6',
+    paper: '#111111',
+    seal: '#f5d90a',
+    mute: '#b7b1a6',
+    line: '#2c2c2c',
+    surface: '#1b1b1b',
   },
   {
-    id: 'argila',
-    name: 'Argila',
-    nameEn: 'Clay',
-    ink: '#2a221e',
+    id: 'vinho',
+    name: 'Vinho',
+    nameEn: 'Wine',
+    ink: '#241416',
     paper: '#f6efe8',
-    seal: '#c45c3e',
-    mute: '#7a6a60',
-    line: '#eadfd4',
-    surface: '#fbf6f1',
+    seal: '#8e1d2c',
+    mute: '#6e585c',
+    line: '#e4d4cc',
+    surface: '#fffaf6',
   },
   {
-    id: 'biblioteca',
-    name: 'Biblioteca',
-    nameEn: 'Library',
-    ink: '#1e2924',
-    paper: '#f5f2ea',
-    seal: '#8a6232',
-    mute: '#667068',
-    line: '#e2ddd2',
-    surface: '#faf8f3',
+    id: 'marinho',
+    name: 'Marinho',
+    nameEn: 'Navy',
+    ink: '#0c1c33',
+    paper: '#e7eef5',
+    seal: '#b0893e',
+    mute: '#516277',
+    line: '#c9d6e4',
+    surface: '#f7fafc',
+  },
+  {
+    id: 'sinal',
+    name: 'Sinal',
+    nameEn: 'Signal',
+    ink: '#161616',
+    paper: '#ffffff',
+    seal: '#d7263d',
+    mute: '#5e5e5e',
+    line: '#ececec',
+    surface: '#fafafa',
   },
 ];
+
+const LAYOUT_TYPE: Record<LayoutId, { display: string; text: string; mono: string }> = {
+  galeria: {
+    display: '"Manrope", "Segoe UI", sans-serif',
+    text: '"Manrope", "Segoe UI", sans-serif',
+    mono: '"IBM Plex Mono", ui-monospace, monospace',
+  },
+  indice: {
+    display: '"Source Serif 4", "Times New Roman", serif',
+    text: '"Source Sans 3", "Segoe UI", sans-serif',
+    mono: '"IBM Plex Mono", ui-monospace, monospace',
+  },
+  lamina: {
+    display: '"Anton", "Arial Narrow", sans-serif',
+    text: '"Manrope", "Segoe UI", sans-serif',
+    mono: '"IBM Plex Mono", ui-monospace, monospace',
+  },
+  revista: {
+    display: '"Fraunces", "Times New Roman", serif',
+    text: '"Outfit", "Segoe UI", sans-serif',
+    mono: '"IBM Plex Mono", ui-monospace, monospace',
+  },
+  painel: {
+    display: '"IBM Plex Sans", "Segoe UI", sans-serif',
+    text: '"IBM Plex Sans", "Segoe UI", sans-serif',
+    mono: '"IBM Plex Mono", ui-monospace, monospace',
+  },
+};
 
 function stored<T extends string>(key: string, allowed: readonly T[], fallback: T): T {
   if (typeof localStorage === 'undefined') {
@@ -133,7 +161,7 @@ function stored<T extends string>(key: string, allowed: readonly T[], fallback: 
 @Injectable({ providedIn: 'root' })
 export class DesignService {
   readonly layout = signal<LayoutId>(stored(LAYOUT_KEY, LAYOUTS.map((item) => item.id), 'indice'));
-  readonly palette = signal<PaletteId>(stored(PALETTE_KEY, PALETTES.map((item) => item.id), 'tinta'));
+  readonly palette = signal<PaletteId>(stored(PALETTE_KEY, PALETTES.map((item) => item.id), 'claro'));
 
   constructor() {
     this.apply();
@@ -156,6 +184,7 @@ export class DesignService {
       return;
     }
     const palette = PALETTES.find((item) => item.id === this.palette()) ?? PALETTES[0];
+    const type = LAYOUT_TYPE[this.layout()];
     const root = document.documentElement;
     root.dataset['layout'] = this.layout();
     root.dataset['palette'] = palette.id;
@@ -165,5 +194,24 @@ export class DesignService {
     root.style.setProperty('--mute', palette.mute);
     root.style.setProperty('--line', palette.line);
     root.style.setProperty('--surface', palette.surface);
+    root.style.setProperty('--on-seal', onColor(palette.seal));
+    root.style.setProperty('--display', type.display);
+    root.style.setProperty('--text', type.text);
+    root.style.setProperty('--mono', type.mono);
+    root.style.setProperty('--serif', type.display);
+    root.style.colorScheme = isDark(palette.paper) ? 'dark' : 'light';
   }
+}
+
+function channel(hex: string, shift: number): number {
+  const raw = parseInt(hex.slice(1 + shift, 3 + shift), 16) / 255;
+  return raw <= 0.03928 ? raw / 12.92 : ((raw + 0.055) / 1.055) ** 2.4;
+}
+
+function isDark(hex: string): boolean {
+  return 0.2126 * channel(hex, 0) + 0.7152 * channel(hex, 2) + 0.0722 * channel(hex, 4) < 0.4;
+}
+
+function onColor(hex: string): string {
+  return isDark(hex) ? '#f7f4ee' : '#161616';
 }
