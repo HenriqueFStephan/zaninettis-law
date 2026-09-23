@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+.angular/
+
+# Environment & secrets — never commit
+.env
+debt.txt
+*.local
+
+# Data & logs — keep demo seed in git so deploys have content
+backend/data/*
+!backend/data/seed/
+!backend/data/seed/**
+*.db
+*.log
+agents/output/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+frontend/dist/
+coverage/

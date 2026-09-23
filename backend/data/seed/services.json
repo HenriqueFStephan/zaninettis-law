@@ -1,0 +1,37 @@
+[
+  {
+    "id": "societario",
+    "title": "Societário",
+    "description": "Estrutura de sociedades, acordos e governança. Texto institucional entra na próxima etapa.",
+    "icon": "mark",
+    "highlights": ["Constituição", "Acordos", "Governança"]
+  },
+  {
+    "id": "contencioso",
+    "title": "Contencioso",
+    "description": "Disputas judiciais e arbitrais. Texto institucional entra na próxima etapa.",
+    "icon": "mark",
+    "highlights": ["Judicial", "Arbitragem", "Medidas urgentes"]
+  },
+  {
+    "id": "contratos",
+    "title": "Contratos",
+    "description": "Negociação e revisão de contratos empresariais. Texto institucional entra na próxima etapa.",
+    "icon": "mark",
+    "highlights": ["Negociação", "Revisão", "Execução"]
+  },
+  {
+    "id": "trabalhista",
+    "title": "Trabalhista",
+    "description": "Relações de trabalho e contencioso trabalhista. Texto institucional entra na próxima etapa.",
+    "icon": "mark",
+    "highlights": ["Consultivo", "Contencioso", "Negociação"]
+  },
+  {
+    "id": "tributario",
+    "title": "Tributário",
+    "description": "Consultoria e contencioso tributário. Texto institucional entra na próxima etapa.",
+    "icon": "mark",
+    "highlights": ["Consultivo", "Administrativo", "Judicial"]
+  }
+]

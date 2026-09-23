@@ -1,0 +1,19 @@
+# Official origins the on-demand law research agent should prefer.
+# The workflow is manual: GitHub → Actions → LAW RESEARCH → Run workflow.
+
+sources:
+  - name: Planalto
+    url: https://www.planalto.gov.br
+    kind: legislation
+  - name: Diário Oficial da União
+    url: https://www.in.gov.br
+    kind: gazette
+  - name: STF
+    url: https://portal.stf.jus.br
+    kind: court
+  - name: STJ
+    url: https://www.stj.jus.br
+    kind: court
+  - name: TST
+    url: https://www.tst.jus.br
+    kind: court

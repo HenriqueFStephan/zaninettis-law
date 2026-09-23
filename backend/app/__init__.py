@@ -1,0 +1,1 @@
+"""Zaninettis FastAPI application package."""

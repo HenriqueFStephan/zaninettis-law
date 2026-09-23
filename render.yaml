@@ -1,0 +1,54 @@
+# Render Blueprint — https://dashboard.render.com
+# New + → Blueprint → select this repository
+# After deploy: set FRONTEND_URL to your Netlify URL, then redeploy.
+# Secrets use sync: false — Render asks for them in the dashboard. Do not commit values.
+
+services:
+  - type: web
+    name: zaninettis-api
+    runtime: python
+    repo: https://github.com/HenriqueFStephan/zaninettis-law
+    branch: main
+    rootDir: backend
+    plan: free
+    autoDeployTrigger: commit
+    buildFilter:
+      paths:
+        - backend/**
+        - render.yaml
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.0"
+      - key: APP_ENV
+        value: production
+      - key: LLM_PROVIDER
+        value: placeholder
+      - key: FRONTEND_URL
+        value: https://zaninettis.netlify.app
+      - key: AUTHOR_NAME
+        value: Zaninettis
+      - key: AUTHOR_EMAIL
+        sync: false
+      - key: SMTP_HOST
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_USERNAME
+        sync: false
+      - key: SMTP_FROM
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
+      - key: CONSULTING_NOTIFY_TO
+        sync: false
+      - key: RESEARCH_DIGEST_TO
+        sync: false
+      - key: GITHUB_REPO
+        value: HenriqueFStephan/zaninettis-law
+      - key: GITHUB_STUDIO_TOKEN
+        sync: false
+      - key: STUDIO_ACCESS_TOKEN
+        sync: false

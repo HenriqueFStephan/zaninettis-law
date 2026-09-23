@@ -1,0 +1,37 @@
+# Copy to debt.txt (gitignored). Leave secrets empty until you create them.
+# Do not paste the Medi Canopy Netlify site id here — that site is a different project.
+
+APP_ENV=development
+APP_SECRET_KEY=
+API_BASE_URL=http://localhost:8000
+FRONTEND_URL=http://localhost:4200
+DATABASE_URL=sqlite:///./data/zaninettis.db
+
+AUTHOR_EMAIL=
+AUTHOR_NAME=Zaninettis
+
+SMTP_HOST=
+SMTP_PORT=587
+SMTP_USERNAME=
+SMTP_PASSWORD=
+SMTP_FROM=
+CONSULTING_NOTIFY_TO=
+RESEARCH_DIGEST_TO=
+
+LLM_PROVIDER=placeholder
+OPENAI_API_KEY=
+ANTHROPIC_API_KEY=
+LLM_MODEL=gpt-4o
+
+GITHUB_REPO=HenriqueFStephan/zaninettis-law
+GITHUB_STUDIO_TOKEN=
+STUDIO_ACCESS_TOKEN=
+
+# GitHub Actions secrets (set in the repo, not in this file):
+# CURSOR_API_KEY
+# RENDER_DEPLOY_HOOK_URL
+#
+# Netlify site env (set in the Netlify UI, not in this file):
+# NG_APP_API_URL=/api/v1
+# NETLIFY_AUTH_TOKEN and NETLIFY_SITE_ID belong to a new Zaninettis site if you automate Netlify.
+# Do not reuse medi-canopy's NETLIFY_SITE_ID.

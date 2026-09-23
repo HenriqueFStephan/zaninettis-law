@@ -1,0 +1,99 @@
+name: "📚 LAW RESEARCH"
+
+run-name: "📚 LAW RESEARCH — ${{ inputs.branch_of_law || 'branch' }}"
+
+# On demand only. Run this workflow and name the branch of law to research.
+# The job opens a GitHub issue labeled law-research. It does not publish to the site.
+# Comment `[POST]` on that issue when an item should go live (🔧 AI AGENT).
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch_of_law:
+        description: "Branch of law (e.g. trabalhista, tributário, societário)"
+        required: true
+        type: string
+      focus:
+        description: "What to look for"
+        required: true
+        default: "updates"
+        type: choice
+        options:
+          - updates
+          - jurisprudence
+          - doctrine
+      date:
+        description: "Report date override (YYYY-MM-DD)"
+        required: false
+        default: ""
+      model:
+        description: "Cursor model ID"
+        required: false
+        default: "composer-2.5"
+      max_items:
+        description: "Maximum items to request"
+        required: false
+        default: "8"
+      dry_run:
+        description: "If true, print the prompt and do not call Cursor"
+        required: false
+        default: "false"
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: law-research
+  cancel-in-progress: false
+
+jobs:
+  research:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Research the requested branch of law
+        env:
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
+          EXTRA_FLAGS=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            EXTRA_FLAGS="--dry-run"
+          fi
+          python scripts/run_law_research.py \
+            --repo "$REPO" \
+            --repo-url "https://github.com/$REPO" \
+            --base-ref "${{ github.event.repository.default_branch }}" \
+            --branch-of-law "${{ inputs.branch_of_law }}" \
+            --focus "${{ inputs.focus }}" \
+            --date "${{ inputs.date }}" \
+            --model "${{ inputs.model }}" \
+            --max-items "${{ inputs.max_items }}" \
+            --catalog "agents/data/discovered_law.json" \
+            --output-dir "agents/output/law_research" \
+            $EXTRA_FLAGS
+
+      - name: Commit updated research catalog
+        if: inputs.dry_run != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add agents/data/discovered_law.json
+          if git diff --cached --quiet; then
+            echo "Research catalog unchanged."
+            exit 0
+          fi
+          git commit -m "chore: record law research ${{ inputs.branch_of_law }}"
+          git push origin "HEAD:${{ github.ref_name }}"

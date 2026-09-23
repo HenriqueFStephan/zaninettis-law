@@ -1,0 +1,14 @@
+[
+  {
+    "id": "news-estrutura",
+    "title": "Atualização — espaço reservado",
+    "summary": "Este card mostra onde entram notas de legislação, jurisprudência e diário oficial.",
+    "content": "Conteúdo de atualização jurídica entra na próxima etapa.",
+    "source_name": "Estrutura",
+    "source_url": "",
+    "region": "BR",
+    "status": "approved",
+    "published_at": "2026-09-01T12:00:00+00:00",
+    "tags": ["estrutura"]
+  }
+]

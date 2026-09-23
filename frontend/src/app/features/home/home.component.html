@@ -1,0 +1,111 @@
+<section class="stage" [attr.data-layout]="design.layout()">
+  <div class="indice" *ngIf="design.layout() === 'indice'">
+    <aside>
+      <p class="kicker">{{ 'home.kicker' | t }}</p>
+      <p class="aside-name">Zaninettis</p>
+      <p class="aside-city">{{ 'footer.city' | t }}</p>
+    </aside>
+    <div>
+      <ol>
+        <li *ngFor="let area of areas">
+          <span>{{ area.n }}</span>
+          <a routerLink="/atuacao">{{ area.name }}</a>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="portico" *ngIf="design.layout() === 'portico'">
+    <div class="portico__statement">
+      <p class="kicker">Zaninettis</p>
+      <h1>{{ 'home.line' | t }}</h1>
+    </div>
+    <div class="rail">
+      <a *ngFor="let area of areas" routerLink="/atuacao">
+        <span>{{ area.n }}</span>
+        {{ area.name }}
+      </a>
+    </div>
+  </div>
+
+  <div class="dossie" *ngIf="design.layout() === 'dossie'">
+    <div>
+      <p class="kicker">{{ 'home.kicker' | t }}</p>
+      <h1>Zaninettis</h1>
+      <p class="lead">{{ 'home.line' | t }}</p>
+    </div>
+    <div>
+      <p class="kicker">{{ 'home.notesTitle' | t }}</p>
+      <article><span>01</span>{{ 'home.note1' | t }}</article>
+      <article><span>02</span>{{ 'home.note2' | t }}</article>
+      <article><span>03</span>{{ 'home.note3' | t }}</article>
+    </div>
+  </div>
+
+  <div class="atlas" *ngIf="design.layout() === 'atlas'">
+    <header>
+      <h1>Zaninettis</h1>
+      <p>{{ 'home.atlasLead' | t }}</p>
+    </header>
+    <div class="grid">
+      <a *ngFor="let area of areas" routerLink="/atuacao">
+        <span>{{ area.n }}</span>
+        <strong>{{ area.name }}</strong>
+      </a>
+      <a class="contact" routerLink="/contato">
+        <span>06</span>
+        <strong>{{ 'home.contactCue' | t }}</strong>
+      </a>
+    </div>
+  </div>
+
+  <div class="carta" *ngIf="design.layout() === 'carta'">
+    <p class="kicker">{{ 'home.letterDate' | t }}</p>
+    <h1>{{ 'home.letterOpen' | t }}</h1>
+    <p>{{ 'home.letterBody' | t }}</p>
+    <dl>
+      <div *ngFor="let area of areas">
+        <dt>{{ area.n }}</dt>
+        <dd>{{ area.name }}</dd>
+      </div>
+    </dl>
+    <p class="sign">{{ 'home.signature' | t }}</p>
+  </div>
+</section>
+
+<aside class="dock" [attr.aria-label]="'chooser.structure' | t">
+  <p>{{ 'chooser.lead' | t }}</p>
+  <div class="dock__row">
+    <span>{{ 'chooser.structure' | t }}</span>
+    <div class="choices" role="listbox">
+      <button
+        type="button"
+        *ngFor="let layout of layouts"
+        role="option"
+        [attr.aria-selected]="design.layout() === layout.id"
+        [class.on]="design.layout() === layout.id"
+        (click)="design.setLayout(layout.id)"
+      >
+        {{ layoutName(layout.id) }}
+      </button>
+    </div>
+  </div>
+  <p class="dock__note">{{ layoutNote(design.layout()) }}</p>
+  <div class="dock__row">
+    <span>{{ 'chooser.palette' | t }}</span>
+    <div class="swatches">
+      <button
+        type="button"
+        *ngFor="let palette of palettes"
+        [class.on]="design.palette() === palette.id"
+        [attr.aria-label]="paletteName(palette.id)"
+        [attr.title]="paletteName(palette.id)"
+        (click)="design.setPalette(palette.id)"
+      >
+        <i [style.background]="palette.paper"></i>
+        <i [style.background]="palette.ink"></i>
+        <i [style.background]="palette.seal"></i>
+      </button>
+    </div>
+  </div>
+</aside>
