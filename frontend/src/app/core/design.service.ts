@@ -160,7 +160,7 @@ function stored<T extends string>(key: string, allowed: readonly T[], fallback: 
 
 @Injectable({ providedIn: 'root' })
 export class DesignService {
-  readonly layout = signal<LayoutId>(stored(LAYOUT_KEY, LAYOUTS.map((item) => item.id), 'indice'));
+  readonly layout = signal<LayoutId>(stored(LAYOUT_KEY, LAYOUTS.map((item) => item.id), 'galeria'));
   readonly palette = signal<PaletteId>(stored(PALETTE_KEY, PALETTES.map((item) => item.id), 'claro'));
 
   constructor() {
