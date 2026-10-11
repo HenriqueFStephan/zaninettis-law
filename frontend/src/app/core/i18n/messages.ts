@@ -23,7 +23,7 @@ export const dictionaries = {
     'contact.phone': 'Telefone',
     'services.inquire': 'Pedir uma conversa',
     'home.kicker': 'Advocacia',
-    'home.line': 'Uma prática medida, em São Paulo.',
+    'home.line': 'Consultoria e Planejamento tributário, patrimonial e sucessório',
     'home.phFacade': 'Fotografia da fachada ao fim da tarde: vidro e pedra, sem pessoas, enquadramento largo.',
     'home.phRoom': 'Fotografia de uma sala de reunião com luz natural, mesa longa e cadeiras vazias, sem logotipos.',
     'home.phPages': 'Detalhe de um código impresso aberto sobre a mesa, só as páginas, sem mãos.',
