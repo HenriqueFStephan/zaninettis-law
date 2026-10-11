@@ -40,7 +40,7 @@ class BlogPost(BaseModel):
     content_markdown: str = ""
     tags: list[str] = Field(default_factory=list)
     published_at: str = ""
-    author_name: str = "Zaninettis"
+    author_name: str = "Lex Fide"
     source_url: str = ""
 
 

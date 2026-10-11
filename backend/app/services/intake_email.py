@@ -6,7 +6,7 @@ import html
 
 
 def intake_subject(name: str) -> str:
-    return f"Zaninettis — consulta de {name.strip()}"
+    return f"Lex Fide — consulta de {name.strip()}"
 
 
 def intake_text_body(
@@ -48,7 +48,7 @@ def intake_html_body(
     areas = "".join(f"<li>{esc(item)}</li>" for item in services) or "<li>—</li>"
     return f"""<!doctype html>
 <html lang="pt-BR"><body style="font-family:Georgia,serif;color:#1a1814;background:#f4efe6;padding:24px">
-  <h1 style="font-weight:400;font-size:22px">Nova consulta — Zaninettis</h1>
+  <h1 style="font-weight:400;font-size:22px">Nova consulta — Lex Fide</h1>
   <p><strong>Nome:</strong> {esc(name)}<br>
   <strong>E-mail:</strong> {esc(email)}<br>
   <strong>Organização:</strong> {esc(company)}<br>

@@ -50,7 +50,7 @@ def _publish(item: dict) -> None:
                 "content_markdown": item.get("summary") or "",
                 "tags": item.get("tags") or [],
                 "published_at": now,
-                "author_name": "Zaninettis",
+                "author_name": "Lex Fide",
                 "source_url": item.get("source_url") or "",
             }
         )

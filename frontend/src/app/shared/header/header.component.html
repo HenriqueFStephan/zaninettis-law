@@ -1,5 +1,5 @@
 <header class="g">
-  <a routerLink="/" (click)="open = false">Zaninettis</a>
+  <a routerLink="/" (click)="open = false">Lex Fide</a>
   <button type="button" (click)="open = !open">{{ (open ? 'nav.close' : 'nav.menu') | t }}</button>
   <div class="sheet" *ngIf="open">
     <a routerLink="/" routerLinkActive="on" [routerLinkActiveOptions]="{ exact: true }" (click)="open = false">{{ 'nav.home' | t }}</a>

@@ -98,7 +98,7 @@ def safe_alt_text(name: str, fallback: str) -> str:
 
 def render_issue_body(blocks: list[StudioBlock], image_urls: dict[str, str]) -> str:
     parts = [
-        "_Filed from the Zaninettis studio. Add the `solve` label to start the AI agent._",
+        "_Filed from the Lex Fide studio. Add the `solve` label to start the AI agent._",
         "",
     ]
     image_index = 0

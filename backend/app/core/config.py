@@ -31,7 +31,7 @@ class Settings(BaseSettings):
     database_url: str = f"sqlite:///{DATA_DIR / 'zaninettis.db'}"
 
     author_email: str = "author@example.com"
-    author_name: str = "Zaninettis"
+    author_name: str = "Lex Fide"
 
     llm_provider: str = "placeholder"
     openai_api_key: str = ""

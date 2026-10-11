@@ -52,7 +52,7 @@ def create_post(payload: BlogPostCreate) -> BlogPost:
     now = datetime.now(timezone.utc).isoformat()
     record = {
         "id": new_id(),
-        "author_name": get_settings().author_name or "Zaninettis",
+        "author_name": get_settings().author_name or "Lex Fide",
         "published_at": now,
         **payload.model_dump(mode="json"),
     }

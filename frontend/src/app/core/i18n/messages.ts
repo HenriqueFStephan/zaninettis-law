@@ -1,7 +1,7 @@
 export const dictionaries = {
   'pt-BR': {
-    'meta.title': 'Zaninettis',
-    'meta.description': 'Zaninettis — estrutura do site. O texto institucional entra na próxima etapa.',
+    'meta.title': 'Lex Fide',
+    'meta.description': 'Lex Fide — estrutura do site. O texto institucional entra na próxima etapa.',
     'nav.home': 'Início',
     'nav.services': 'Atuação',
     'nav.articles': 'Artigos',
@@ -34,7 +34,7 @@ export const dictionaries = {
     'home.letterDate': 'São Paulo',
     'home.letterOpen': 'Esta coluna é o corpo da página.',
     'home.letterBody': 'O índice de áreas fica abaixo, como uma carta que ainda não foi escrita. A paleta e a estrutura podem mudar sem reescrever o conteúdo.',
-    'home.signature': 'Zaninettis',
+    'home.signature': 'Lex Fide',
     'home.notesTitle': 'Notas',
     'home.note1': 'Espaço para uma atualização oficial.',
     'home.note2': 'Espaço para uma decisão recente.',
@@ -70,8 +70,8 @@ export const dictionaries = {
     'studio.localDryRun': 'Teste local: o token do GitHub não está definido, então nenhuma issue foi aberta.',
   },
   en: {
-    'meta.title': 'Zaninettis',
-    'meta.description': 'Zaninettis — site structure. Institutional copy comes in the next step.',
+    'meta.title': 'Lex Fide',
+    'meta.description': 'Lex Fide — site structure. Institutional copy comes in the next step.',
     'nav.home': 'Home',
     'nav.services': 'Practice',
     'nav.articles': 'Articles',
@@ -104,7 +104,7 @@ export const dictionaries = {
     'home.letterDate': 'São Paulo',
     'home.letterOpen': 'This column is the body of the page.',
     'home.letterBody': 'The practice index sits below, like a letter that has not been written yet. Palette and structure can change without rewriting the content.',
-    'home.signature': 'Zaninettis',
+    'home.signature': 'Lex Fide',
     'home.notesTitle': 'Notes',
     'home.note1': 'Room for an official update.',
     'home.note2': 'Room for a recent decision.',

@@ -29,7 +29,7 @@ services:
       - key: FRONTEND_URL
         value: https://zaninettis.netlify.app
       - key: AUTHOR_NAME
-        value: Zaninettis
+        value: Lex Fide
       - key: AUTHOR_EMAIL
         sync: false
       - key: SMTP_HOST

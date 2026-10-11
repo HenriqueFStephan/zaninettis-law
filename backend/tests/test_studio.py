@@ -60,7 +60,7 @@ def test_render_issue_body_keeps_text_and_images_in_order():
     assert "Move the header" in body
     assert "![snip 1](https://example.com/a.png)" in body
     assert body.index("Move the header") < body.index("snip 1")
-    assert "Filed from the Zaninettis studio" in body
+    assert "Filed from the Lex Fide studio" in body
     assert "Add the `solve` label" in body
 
 

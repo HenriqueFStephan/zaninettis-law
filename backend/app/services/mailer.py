@@ -33,7 +33,7 @@ def _from_address(settings) -> str:
 
 
 def _from_header(settings) -> str:
-    name = getattr(settings, "author_name", "") or "Zaninettis"
+    name = getattr(settings, "author_name", "") or "Lex Fide"
     return formataddr((name, _from_address(settings)))
 
 
