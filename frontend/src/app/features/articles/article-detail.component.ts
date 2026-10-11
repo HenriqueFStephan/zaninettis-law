@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
 import { ApiService } from '../../core/api.service';
-import { DesignService } from '../../core/design.service';
 import { BlogPost } from '../../core/models';
 import { TranslatePipe } from '../../core/i18n';
 
@@ -20,7 +19,6 @@ export class ArticleDetailComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private api: ApiService,
-    readonly design: DesignService,
   ) {}
 
   ngOnInit(): void {

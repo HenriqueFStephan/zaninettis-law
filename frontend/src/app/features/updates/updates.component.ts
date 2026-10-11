@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 
 import { ApiService } from '../../core/api.service';
-import { DesignService } from '../../core/design.service';
 import { NewsArticle } from '../../core/models';
 import { TranslatePipe } from '../../core/i18n';
 
@@ -17,10 +16,7 @@ export class UpdatesComponent implements OnInit {
   private readonly shots = ['home.phCity', 'home.phFacade', 'home.phPages'] as const;
   items: NewsArticle[] = [];
 
-  constructor(
-    private api: ApiService,
-    readonly design: DesignService,
-  ) {}
+  constructor(private api: ApiService) {}
 
   shot(index: number): string {
     return this.shots[index % this.shots.length];

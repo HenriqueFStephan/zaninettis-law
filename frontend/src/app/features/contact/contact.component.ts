@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { ApiService } from '../../core/api.service';
-import { DesignService } from '../../core/design.service';
 import { TranslatePipe } from '../../core/i18n';
 
 @Component({
@@ -21,10 +20,7 @@ export class ContactComponent {
   sending = false;
   notice = '';
 
-  constructor(
-    private api: ApiService,
-    readonly design: DesignService,
-  ) {}
+  constructor(private api: ApiService) {}
 
   send(): void {
     if (this.sending) {

@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { ApiService } from '../../core/api.service';
-import { DesignService } from '../../core/design.service';
 import { BlogPost } from '../../core/models';
 import { TranslatePipe } from '../../core/i18n';
 
@@ -17,10 +16,7 @@ import { TranslatePipe } from '../../core/i18n';
 export class ArticleListComponent implements OnInit {
   posts: BlogPost[] = [];
 
-  constructor(
-    private api: ApiService,
-    readonly design: DesignService,
-  ) {}
+  constructor(private api: ApiService) {}
 
   ngOnInit(): void {
     this.api.getBlogPosts().subscribe({

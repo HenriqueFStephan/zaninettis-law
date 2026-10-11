@@ -3,21 +3,18 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { ApiService } from '../../core/api.service';
-import { DesignService } from '../../core/design.service';
 import { ServiceOffering } from '../../core/models';
 import { TranslatePipe } from '../../core/i18n';
-import { MarkComponent } from '../../shared/mark/mark.component';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule, FormsModule, TranslatePipe, MarkComponent],
+  imports: [CommonModule, FormsModule, TranslatePipe],
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.scss'],
 })
 export class ServicesComponent implements OnInit {
   private readonly shots = ['home.phRoom', 'home.phPages', 'home.phLibrary', 'home.phCity', 'home.phFacade'] as const;
-  readonly marks = ['diamond', 'ring', 'bars', 'plus', 'arc'] as const;
   services: ServiceOffering[] = [];
   picked: string[] = [];
   name = '';
@@ -27,10 +24,7 @@ export class ServicesComponent implements OnInit {
   sending = false;
   notice = '';
 
-  constructor(
-    private api: ApiService,
-    readonly design: DesignService,
-  ) {}
+  constructor(private api: ApiService) {}
 
   shot(index: number): string {
     return this.shots[index % this.shots.length];
