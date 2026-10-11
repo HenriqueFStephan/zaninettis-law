@@ -18,10 +18,10 @@ interface Area {
 })
 export class HomeComponent {
   readonly areas: Area[] = [
-    { n: '01', name: 'Societário' },
-    { n: '02', name: 'Contencioso' },
-    { n: '03', name: 'Contratos' },
+    { n: '01', name: 'Tributário' },
+    { n: '02', name: 'Societário' },
+    { n: '03', name: 'Contencioso' },
     { n: '04', name: 'Trabalhista' },
-    { n: '05', name: 'Tributário' },
+    { n: '05', name: 'Contratos' },
   ];
 }
