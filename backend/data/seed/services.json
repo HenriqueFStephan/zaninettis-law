@@ -4,34 +4,69 @@
     "title": "Societário",
     "description": "Estrutura de sociedades, acordos e governança. Texto institucional entra na próxima etapa.",
     "icon": "mark",
-    "highlights": ["Constituição", "Acordos", "Governança"]
+    "highlights": ["Constituição", "Acordos", "Governança"],
+    "i18n": {
+      "en": {
+        "title": "Corporate",
+        "description": "Entity structuring, shareholders' agreements and governance. Institutional copy comes in the next step.",
+        "highlights": ["Formation", "Shareholders' agreements", "Governance"]
+      }
+    }
   },
   {
     "id": "contencioso",
     "title": "Contencioso",
     "description": "Disputas judiciais e arbitrais. Texto institucional entra na próxima etapa.",
     "icon": "mark",
-    "highlights": ["Judicial", "Arbitragem", "Medidas urgentes"]
+    "highlights": ["Judicial", "Arbitragem", "Medidas urgentes"],
+    "i18n": {
+      "en": {
+        "title": "Disputes",
+        "description": "Judicial and arbitral disputes. Institutional copy comes in the next step.",
+        "highlights": ["Litigation", "Arbitration", "Urgent relief"]
+      }
+    }
   },
   {
     "id": "contratos",
     "title": "Contratos",
     "description": "Negociação e revisão de contratos empresariais. Texto institucional entra na próxima etapa.",
     "icon": "mark",
-    "highlights": ["Negociação", "Revisão", "Execução"]
+    "highlights": ["Negociação", "Revisão", "Execução"],
+    "i18n": {
+      "en": {
+        "title": "Contracts",
+        "description": "Negotiation and review of business contracts. Institutional copy comes in the next step.",
+        "highlights": ["Negotiation", "Review", "Performance"]
+      }
+    }
   },
   {
     "id": "trabalhista",
     "title": "Trabalhista",
     "description": "Relações de trabalho e contencioso trabalhista. Texto institucional entra na próxima etapa.",
     "icon": "mark",
-    "highlights": ["Consultivo", "Contencioso", "Negociação"]
+    "highlights": ["Consultivo", "Contencioso", "Negociação"],
+    "i18n": {
+      "en": {
+        "title": "Employment",
+        "description": "Employment relationships and labor disputes. Institutional copy comes in the next step.",
+        "highlights": ["Advisory", "Disputes", "Negotiation"]
+      }
+    }
   },
   {
     "id": "tributario",
     "title": "Tributário",
     "description": "Consultoria e contencioso tributário. Texto institucional entra na próxima etapa.",
     "icon": "mark",
-    "highlights": ["Consultivo", "Administrativo", "Judicial"]
+    "highlights": ["Consultivo", "Administrativo", "Judicial"],
+    "i18n": {
+      "en": {
+        "title": "Tax",
+        "description": "Tax advisory and disputes. Institutional copy comes in the next step.",
+        "highlights": ["Advisory", "Administrative", "Judicial"]
+      }
+    }
   }
 ]

@@ -2,12 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { TranslatePipe } from '../../core/i18n';
-
-interface Area {
-  n: string;
-  name: string;
-}
+import { MsgKey, TranslatePipe } from '../../core/i18n';
 
 @Component({
   selector: 'app-home',
@@ -17,11 +12,11 @@ interface Area {
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
-  readonly areas: Area[] = [
-    { n: '01', name: 'Tributário' },
-    { n: '02', name: 'Societário' },
-    { n: '03', name: 'Contencioso' },
-    { n: '04', name: 'Trabalhista' },
-    { n: '05', name: 'Contratos' },
+  readonly areas: { key: MsgKey }[] = [
+    { key: 'home.area.tributario' },
+    { key: 'home.area.societario' },
+    { key: 'home.area.contencioso' },
+    { key: 'home.area.trabalhista' },
+    { key: 'home.area.contratos' },
   ];
 }

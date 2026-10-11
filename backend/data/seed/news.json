@@ -9,6 +9,14 @@
     "region": "BR",
     "status": "approved",
     "published_at": "2026-09-01T12:00:00+00:00",
-    "tags": ["estrutura"]
+    "tags": ["estrutura"],
+    "i18n": {
+      "en": {
+        "title": "Update — placeholder",
+        "summary": "This card shows where legislation, case law and official gazette notes will appear.",
+        "content": "Legal update content comes in the next step.",
+        "source_name": "Structure"
+      }
+    }
   }
 ]

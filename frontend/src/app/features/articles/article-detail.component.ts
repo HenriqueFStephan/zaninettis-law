@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
 import { ApiService } from '../../core/api.service';
 import { BlogPost } from '../../core/models';
-import { TranslatePipe } from '../../core/i18n';
+import { reloadOnLang, TranslatePipe } from '../../core/i18n';
 
 @Component({
   selector: 'app-article-detail',
@@ -13,15 +13,17 @@ import { TranslatePipe } from '../../core/i18n';
   templateUrl: './article-detail.component.html',
   styleUrls: ['./article-detail.component.scss'],
 })
-export class ArticleDetailComponent implements OnInit {
+export class ArticleDetailComponent {
   post: BlogPost | null = null;
 
   constructor(
     private route: ActivatedRoute,
     private api: ApiService,
-  ) {}
+  ) {
+    reloadOnLang(() => this.loadPost());
+  }
 
-  ngOnInit(): void {
+  private loadPost(): void {
     const slug = this.route.snapshot.paramMap.get('slug') || '';
     this.api.getBlogBySlug(slug).subscribe({
       next: (post) => (this.post = post),

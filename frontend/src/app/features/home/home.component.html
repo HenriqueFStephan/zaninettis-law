@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="strip">
-    <a *ngFor="let area of areas" routerLink="/atuacao">{{ area.name }}</a>
+    <a *ngFor="let area of areas" routerLink="/atuacao">{{ area.key | t }}</a>
   </div>
   <div class="mosaic">
     <figure class="ph tall">

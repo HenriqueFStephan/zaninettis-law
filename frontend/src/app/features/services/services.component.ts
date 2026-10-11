@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { ApiService } from '../../core/api.service';
 import { ServiceOffering } from '../../core/models';
-import { TranslatePipe } from '../../core/i18n';
+import { I18nService, reloadOnLang, TranslatePipe } from '../../core/i18n';
 
 @Component({
   selector: 'app-services',
@@ -13,7 +13,7 @@ import { TranslatePipe } from '../../core/i18n';
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.scss'],
 })
-export class ServicesComponent implements OnInit {
+export class ServicesComponent {
   private readonly shots = ['home.phRoom', 'home.phPages', 'home.phLibrary', 'home.phCity', 'home.phFacade'] as const;
   services: ServiceOffering[] = [];
   picked: string[] = [];
@@ -24,17 +24,15 @@ export class ServicesComponent implements OnInit {
   sending = false;
   notice = '';
 
-  constructor(private api: ApiService) {}
+  constructor(
+    private api: ApiService,
+    private i18n: I18nService,
+  ) {
+    reloadOnLang(() => this.loadServices());
+  }
 
   shot(index: number): string {
     return this.shots[index % this.shots.length];
-  }
-
-  ngOnInit(): void {
-    this.api.getServices().subscribe({
-      next: (items) => (this.services = items),
-      error: () => (this.services = []),
-    });
   }
 
   pick(id: string): void {
@@ -61,8 +59,15 @@ export class ServicesComponent implements OnInit {
         },
         error: () => {
           this.sending = false;
-          this.notice = '—';
+          this.notice = this.i18n.t('contact.error');
         },
       });
+  }
+
+  private loadServices(): void {
+    this.api.getServices().subscribe({
+      next: (items) => (this.services = items),
+      error: () => (this.services = []),
+    });
   }
 }

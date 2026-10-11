@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { ApiService } from '../../core/api.service';
 import { NewsArticle } from '../../core/models';
-import { TranslatePipe } from '../../core/i18n';
+import { reloadOnLang, TranslatePipe } from '../../core/i18n';
 
 @Component({
   selector: 'app-updates',
@@ -12,17 +12,19 @@ import { TranslatePipe } from '../../core/i18n';
   templateUrl: './updates.component.html',
   styleUrls: ['./updates.component.scss'],
 })
-export class UpdatesComponent implements OnInit {
+export class UpdatesComponent {
   private readonly shots = ['home.phCity', 'home.phFacade', 'home.phPages'] as const;
   items: NewsArticle[] = [];
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService) {
+    reloadOnLang(() => this.loadNews());
+  }
 
   shot(index: number): string {
     return this.shots[index % this.shots.length];
   }
 
-  ngOnInit(): void {
+  private loadNews(): void {
     this.api.getNews().subscribe({
       next: (items) => (this.items = items),
       error: () => (this.items = []),

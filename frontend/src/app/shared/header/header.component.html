@@ -1,12 +1,14 @@
 <header class="g">
   <a routerLink="/" (click)="open = false">Lex Fide</a>
-  <button type="button" (click)="open = !open">{{ (open ? 'nav.close' : 'nav.menu') | t }}</button>
+  <div class="tools">
+    <button type="button" class="lang" (click)="toggleLang()">{{ i18n.lang() === 'pt-BR' ? 'EN' : 'PT' }}</button>
+    <button type="button" class="menu" (click)="open = !open">{{ (open ? 'nav.close' : 'nav.menu') | t }}</button>
+  </div>
   <div class="sheet" *ngIf="open">
     <a routerLink="/" routerLinkActive="on" [routerLinkActiveOptions]="{ exact: true }" (click)="open = false">{{ 'nav.home' | t }}</a>
     <a routerLink="/atuacao" routerLinkActive="on" (click)="open = false">{{ 'nav.services' | t }}</a>
     <a routerLink="/artigos" routerLinkActive="on" (click)="open = false">{{ 'nav.articles' | t }}</a>
     <a routerLink="/atualizacoes" routerLinkActive="on" (click)="open = false">{{ 'nav.updates' | t }}</a>
     <a routerLink="/contato" routerLinkActive="on" (click)="open = false">{{ 'nav.contact' | t }}</a>
-    <button type="button" class="lang" (click)="toggleLang()">{{ i18n.lang() === 'pt-BR' ? 'EN' : 'PT' }}</button>
   </div>
 </header>

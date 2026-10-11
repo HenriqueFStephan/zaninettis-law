@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { ApiService } from '../../core/api.service';
-import { TranslatePipe } from '../../core/i18n';
+import { I18nService, TranslatePipe } from '../../core/i18n';
 
 @Component({
   selector: 'app-contact',
@@ -20,7 +20,10 @@ export class ContactComponent {
   sending = false;
   notice = '';
 
-  constructor(private api: ApiService) {}
+  constructor(
+    private api: ApiService,
+    private i18n: I18nService,
+  ) {}
 
   send(): void {
     if (this.sending) {
@@ -41,7 +44,7 @@ export class ContactComponent {
         },
         error: () => {
           this.sending = false;
-          this.notice = '—';
+          this.notice = this.i18n.t('contact.error');
         },
       });
   }

@@ -8,6 +8,13 @@
     "tags": ["estrutura"],
     "published_at": "2026-09-01T12:00:00+00:00",
     "author_name": "Lex Fide",
-    "source_url": ""
+    "source_url": "",
+    "i18n": {
+      "en": {
+        "title": "Structure note",
+        "excerpt": "This article shows the list and detail page format. Definitive copy comes later.",
+        "content_markdown": "## What changed\n\nPlaceholder for the article.\n\n## Source\n\nThe official citation goes here."
+      }
+    }
   }
 ]
