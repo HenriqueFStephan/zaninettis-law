@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { ApiService } from '../../core/api.service';
 import { ServiceOffering } from '../../core/models';
 import { I18nService, reloadOnLang, TranslatePipe } from '../../core/i18n';
+import { photoFor } from '../../core/photos';
 
 @Component({
   selector: 'app-services',
@@ -33,6 +34,10 @@ export class ServicesComponent {
 
   shot(index: number): string {
     return this.shots[index % this.shots.length];
+  }
+
+  photo(index: number): string {
+    return photoFor(this.shot(index));
   }
 
   pick(id: string): void {

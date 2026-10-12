@@ -1,5 +1,5 @@
 <section class="galeria">
-  <figure class="shot"><p>{{ 'home.phRoom' | t }}</p></figure>
+  <figure class="shot tall"><img [src]="photo('home.phRoom')" [alt]="'home.phRoom' | t" /></figure>
   <div>
     <h1>{{ 'nav.contact' | t }}</h1>
     <form (ngSubmit)="send()">

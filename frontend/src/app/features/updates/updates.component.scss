@@ -5,7 +5,8 @@ a { color: var(--seal); }
 .galeria { width: min(1100px, calc(100% - 2rem)); margin: 0 auto 2rem; }
 .galeria h1 { font-size: clamp(3rem, 7vw, 5rem); font-weight: 700; letter-spacing: -0.04em; }
 .galeria article { display: grid; grid-template-columns: 16rem 1fr; gap: 1rem; margin-top: 0.8rem; }
-.galeria .shot { min-height: 10rem; }
+.galeria .shot { min-height: 11rem; }
+.galeria .shot img { object-position: center 45%; }
 .galeria h2 { margin: 0 0 0.3rem; font-size: 1.8rem; }
 .galeria p { color: var(--mute); }
 

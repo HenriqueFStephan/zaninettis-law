@@ -37,7 +37,7 @@ button { cursor: pointer; font: inherit; }
 }
 .band:nth-child(even) { direction: rtl; }
 .band:nth-child(even) > * { direction: ltr; }
-.band .shot { min-height: 100%; }
+.band .shot { min-height: 16rem; }
 .band div { padding: 1.2rem 1.3rem; }
 .band h2 { margin: 0 0 0.4rem; font-size: 2rem; }
 .band ul { color: var(--mute); }

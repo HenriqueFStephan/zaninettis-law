@@ -5,6 +5,7 @@ import { RouterLink } from '@angular/router';
 import { ApiService } from '../../core/api.service';
 import { BlogPost } from '../../core/models';
 import { reloadOnLang, TranslatePipe } from '../../core/i18n';
+import { photoFor } from '../../core/photos';
 
 @Component({
   selector: 'app-article-list',
@@ -15,6 +16,10 @@ import { reloadOnLang, TranslatePipe } from '../../core/i18n';
 })
 export class ArticleListComponent {
   posts: BlogPost[] = [];
+
+  photo(key: string): string {
+    return photoFor(key);
+  }
 
   constructor(private api: ApiService) {
     reloadOnLang(() => this.loadPosts());

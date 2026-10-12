@@ -25,29 +25,30 @@ h1 {
 
 .ph {
   position: relative;
-  display: flex;
-  align-items: flex-start;
+  overflow: hidden;
   min-height: 12rem;
   margin: 0;
-  padding: 0.8rem;
-  background:
-    repeating-linear-gradient(
-      -45deg,
-      color-mix(in srgb, var(--ink) 10%, var(--surface)),
-      color-mix(in srgb, var(--ink) 10%, var(--surface)) 10px,
-      var(--surface) 10px,
-      var(--surface) 20px
-    );
+  background: var(--ink);
 }
 
-.ph p {
-  margin: 0;
-  max-width: 28rem;
-  padding: 0.55rem 0.7rem;
-  background: var(--paper);
-  color: var(--ink);
-  font-size: 0.88rem;
-  line-height: 1.35;
+.ph img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-ph img {
+  object-position: center 42%;
+}
+
+.tall img {
+  object-position: center 58%;
+}
+
+.short img {
+  object-position: center 46%;
 }
 
 .galeria {

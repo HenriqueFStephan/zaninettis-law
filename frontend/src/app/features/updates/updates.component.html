@@ -1,7 +1,7 @@
 <section class="galeria">
   <h1>{{ 'nav.updates' | t }}</h1>
   <article *ngFor="let item of items; let i = index">
-    <figure class="shot"><p>{{ shot(i) | t }}</p></figure>
+    <figure class="shot"><img [src]="photo(i)" [alt]="shot(i) | t" /></figure>
     <div>
       <h2>{{ item.title }}</h2>
       <p>{{ item.summary }}</p>

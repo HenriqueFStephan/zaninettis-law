@@ -1,7 +1,7 @@
 <section class="galeria">
   <h1>{{ 'nav.articles' | t }}</h1>
   <a class="feature" *ngIf="posts[0]" [routerLink]="['/artigos', posts[0].slug]">
-    <figure class="shot"><p>{{ 'home.phLibrary' | t }}</p></figure>
+    <figure class="shot"><img [src]="photo('home.phLibrary')" [alt]="'home.phLibrary' | t" /></figure>
     <div>
       <h2>{{ posts[0].title }}</h2>
       <p>{{ posts[0].excerpt }}</p>

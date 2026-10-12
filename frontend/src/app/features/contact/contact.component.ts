@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { ApiService } from '../../core/api.service';
 import { I18nService, TranslatePipe } from '../../core/i18n';
+import { photoFor } from '../../core/photos';
 
 @Component({
   selector: 'app-contact',
@@ -13,6 +14,10 @@ import { I18nService, TranslatePipe } from '../../core/i18n';
   styleUrls: ['./contact.component.scss'],
 })
 export class ContactComponent {
+  photo(key: string): string {
+    return photoFor(key);
+  }
+
   name = '';
   email = '';
   subject = '';

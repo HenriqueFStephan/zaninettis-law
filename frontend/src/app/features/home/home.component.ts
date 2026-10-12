@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { MsgKey, TranslatePipe } from '../../core/i18n';
+import { photoFor } from '../../core/photos';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,10 @@ import { MsgKey, TranslatePipe } from '../../core/i18n';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  photo(key: string): string {
+    return photoFor(key);
+  }
+
   readonly areas: { key: MsgKey }[] = [
     { key: 'home.area.tributario' },
     { key: 'home.area.societario' },

@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { ApiService } from '../../core/api.service';
 import { NewsArticle } from '../../core/models';
 import { reloadOnLang, TranslatePipe } from '../../core/i18n';
+import { photoFor } from '../../core/photos';
 
 @Component({
   selector: 'app-updates',
@@ -22,6 +23,10 @@ export class UpdatesComponent {
 
   shot(index: number): string {
     return this.shots[index % this.shots.length];
+  }
+
+  photo(index: number): string {
+    return photoFor(this.shot(index));
   }
 
   private loadNews(): void {

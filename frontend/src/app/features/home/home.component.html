@@ -1,7 +1,7 @@
 <section class="stage galeria">
   <div class="hero">
     <div class="ph hero-ph">
-      <p>{{ 'home.phFacade' | t }}</p>
+      <img [src]="photo('home.phFacade')" [alt]="'home.phFacade' | t" />
     </div>
     <div class="hero-copy">
       <p class="where">{{ 'footer.city' | t }}</p>
@@ -14,11 +14,11 @@
   </div>
   <div class="mosaic">
     <figure class="ph tall">
-      <p>{{ 'home.phRoom' | t }}</p>
+      <img [src]="photo('home.phRoom')" [alt]="'home.phRoom' | t" />
     </figure>
     <div class="mosaic-side">
       <figure class="ph short">
-        <p>{{ 'home.phPages' | t }}</p>
+        <img [src]="photo('home.phPages')" [alt]="'home.phPages' | t" />
       </figure>
       <div class="notes">
         <p class="kicker">{{ 'home.notesTitle' | t }}</p>
