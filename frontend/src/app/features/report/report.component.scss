@@ -1,0 +1,83 @@
+:host {
+  display: block;
+}
+
+.boletim {
+  width: min(820px, calc(100% - 2rem));
+  margin: 0 auto 3rem;
+}
+
+:host ::ng-deep .boletim {
+  h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(2.1rem, 4.5vw, 3.4rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 1.05;
+  }
+
+  h2 {
+    margin: 2.2rem 0 0.7rem;
+    font-size: 1.55rem;
+  }
+
+  h3 {
+    margin: 1.4rem 0 0.4rem;
+    font-size: 1.15rem;
+  }
+
+  p,
+  li {
+    color: var(--ink);
+  }
+
+  a {
+    color: var(--seal);
+  }
+
+  ul,
+  ol {
+    padding-left: 1.2rem;
+  }
+
+  blockquote {
+    margin: 1rem 0;
+    padding-left: 1rem;
+    border-left: 3px solid var(--seal);
+    color: var(--mute);
+  }
+
+  table {
+    width: 100%;
+    margin: 1rem 0 1.4rem;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  th,
+  td {
+    padding: 0.55rem 0.45rem;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  pre {
+    overflow-x: auto;
+    padding: 0.8rem;
+    background: var(--surface);
+  }
+}
+
+@media (max-width: 700px) {
+  :host ::ng-deep .boletim table {
+    display: block;
+    overflow-x: auto;
+  }
+}

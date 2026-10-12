@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """
-On-demand research for one branch of Brazilian law.
+Legal monitoring for Brazilian tax and corporate law.
 
-Launches a Cursor cloud agent, waits for a JSON digest, and opens a GitHub
-issue labeled `law-research` and `research` (never `solve`). A later `[POST]`
-comment on that issue is what publishes an item onto the site.
+Launches a Cursor cloud agent with the monitoramento prompt, waits for the
+Markdown bulletin, and writes it to the site at /report. It does not open a
+research issue.
 """
 
 from __future__ import annotations
@@ -39,11 +39,9 @@ DEFAULT_LABELS = ("law-research", "research")
 TERMINAL_STATUSES = {"FINISHED", "ERROR", "CANCELLED", "EXPIRED"}
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_CATALOG = REPO_ROOT / "agents" / "data" / "discovered_law.json"
+DEFAULT_REPORT_PATH = REPO_ROOT / "frontend" / "src" / "assets" / "reports" / "latest.md"
 MONITORING_PROMPT_PATH = REPO_ROOT / "agents" / "prompts" / "monitoramento-juridico-regulatorio.md"
 MONITORING_BRANCH = "tributário e societário"
-MONITORING_ISSUE_TITLE = (
-    "BOLETIM DE INTELIGÊNCIA JURÍDICA — TRIBUTÁRIO E SOCIETÁRIO | BRASIL"
-)
 OFFICIAL_SOURCES = (
     "https://www.planalto.gov.br",
     "https://portal.stf.jus.br",
@@ -80,8 +78,10 @@ def build_monitoring_prompt(date_str: str, prompt_path: Path | None = None) -> s
         "Considere os últimos 15 dias anteriores a esta data.\n\n"
         "Regras de entrega:\n"
         "- Realize pesquisa efetiva na internet antes de redigir o relatório.\n"
-        "- Não modifique arquivos do repositório e não abra pull request.\n"
-        "- Entregue o relatório completo em Markdown, seguindo a estrutura indicada acima."
+        "- Não modifique arquivos do repositório, não abra pull request e não abra issue.\n"
+        "- O relatório será publicado na página /report do site.\n"
+        "- Entregue somente o relatório completo em Markdown, seguindo a estrutura indicada acima.\n"
+        "- A primeira linha deve ser o título do boletim como heading Markdown."
     )
 
 
@@ -210,18 +210,23 @@ def render_issue(branch: str, focus: str, date_str: str, items: list[dict[str, A
     return "\n".join(lines).strip() + "\n"
 
 
-def render_monitoring_issue(date_str: str, report: str, agent_url: str) -> str:
-    lines = [
-        f"Monitoramento jurídico e regulatório — **{MONITORING_BRANCH}** em {date_str}.",
-        "",
-        "Para publicar um trecho ou item no site, comente nesta issue começando com `[POST]` e o título desejado.",
-        "Não adicione o rótulo `solve`: isto é pesquisa, não uma tarefa de código.",
-        "",
-    ]
-    if agent_url:
-        lines.extend([f"Agente: {agent_url}", ""])
-    lines.append(report.strip())
-    return "\n".join(lines).strip() + "\n"
+def extract_report_markdown(text: str) -> str:
+    stripped = text.strip()
+    if stripped.startswith("```"):
+        lines = stripped.splitlines()
+        lines = lines[1:]
+        if lines and lines[-1].strip() == "```":
+            lines = lines[:-1]
+        stripped = "\n".join(lines).strip()
+    if not stripped:
+        raise ValueError("empty report")
+    return stripped + "\n"
+
+
+def write_site_report(path: Path, report: str) -> None:
+    body = extract_report_markdown(report)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(body, encoding="utf-8")
 
 
 def publish_issue(*, repo: str, token: str, title: str, body: str, labels: list[str]) -> str:
@@ -259,6 +264,11 @@ def main() -> int:
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--max-items", type=int, default=8)
     parser.add_argument("--catalog", default=str(DEFAULT_CATALOG))
+    parser.add_argument(
+        "--report-path",
+        default=str(DEFAULT_REPORT_PATH),
+        help="Where the Markdown bulletin is written for the /report page",
+    )
     parser.add_argument("--poll-interval", type=int, default=30)
     parser.add_argument("--timeout", type=int, default=3600)
     parser.add_argument("--output-dir", default="")
@@ -291,7 +301,7 @@ def main() -> int:
     if not cursor_api_key:
         log("Missing required env var: CURSOR_API_KEY", error=True)
         return 2
-    if not github_token:
+    if not monitoring_mode and not github_token:
         log("Missing required env var: GITHUB_TOKEN", error=True)
         return 2
 
@@ -329,16 +339,18 @@ def main() -> int:
     result_text = str(final_run.get("result") or "").strip()
     if monitoring_mode:
         if not result_text:
-            log("Agent returned an empty report; skipping issue creation.", error=True)
+            log("Agent returned an empty report.", error=True)
             return 1
-        title = f"[RESEARCH] {MONITORING_ISSUE_TITLE} — {date_str}"
-        body = render_monitoring_issue(date_str, result_text, agent_url)
+        report_path = Path(args.report_path)
+        write_site_report(report_path, result_text)
         if args.output_dir:
             out = Path(args.output_dir)
             out.mkdir(parents=True, exist_ok=True)
-            (out / f"{date_str}-monitoramento-tributario-societario.md").write_text(body, encoding="utf-8")
-        url = publish_issue(repo=args.repo, token=github_token, title=title, body=body, labels=list(DEFAULT_LABELS))
-        log(f"Opened {url}")
+            (out / f"{date_str}-monitoramento-tributario-societario.md").write_text(
+                report_path.read_text(encoding="utf-8"),
+                encoding="utf-8",
+            )
+        log(f"Wrote report for /report to {report_path}")
         return 0
 
     payload = extract_json_payload(result_text)

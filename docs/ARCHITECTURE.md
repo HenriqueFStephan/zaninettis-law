@@ -14,7 +14,7 @@ flowchart TB
     API[services blog news contact review studio]
   end
   subgraph Actions["GitHub Actions"]
-    Research[LAW RESEARCH on demand]
+    Research["LAW RESEARCH publishes /report"]
     Agent[AI AGENT]
     Hook[DEPLOY BACKEND]
   end
@@ -28,4 +28,4 @@ flowchart TB
   Render --> API
 ```
 
-News and articles enter a review queue before they are treated as published copy. The on-demand research action opens an issue labeled `law-research`. A `[POST]` comment publishes one item. The `solve` label is only for code changes.
+News and articles enter a review queue before they are treated as published copy. The law research action publishes the tax and corporate bulletin to `/report`. The `solve` label is only for code changes.

@@ -1,14 +1,9 @@
 name: "📚 LAW RESEARCH"
 
-run-name: >-
-  📚 LAW RESEARCH — ${{
-    github.event_name == 'schedule' && 'monitoramento tributário e societário' ||
-    inputs.branch_of_law || 'branch'
-  }}
+run-name: "📚 LAW RESEARCH — boletim tributário e societário"
 
-# Scheduled weekly monitor (Monday 06:00 America/Sao_Paulo) and on-demand research.
-# The job opens a GitHub issue labeled law-research. It does not publish to the site.
-# Comment `[POST]` on that issue when an item should go live (🔧 AI AGENT).
+# Monday 06:00 America/Sao_Paulo, and on demand.
+# The job publishes the monitoring bulletin to /report. It does not open an issue.
 
 on:
   schedule:
@@ -16,19 +11,6 @@ on:
     - cron: "0 9 * * 1"
   workflow_dispatch:
     inputs:
-      branch_of_law:
-        description: "Branch of law (e.g. trabalhista, tributário, societário)"
-        required: true
-        type: string
-      focus:
-        description: "What to look for"
-        required: true
-        default: "updates"
-        type: choice
-        options:
-          - updates
-          - jurisprudence
-          - doctrine
       date:
         description: "Report date override (YYYY-MM-DD)"
         required: false
@@ -37,10 +19,6 @@ on:
         description: "Cursor model ID"
         required: false
         default: "composer-2.5"
-      max_items:
-        description: "Maximum items to request"
-        required: false
-        default: "8"
       dry_run:
         description: "If true, print the prompt and do not call Cursor"
         required: false
@@ -48,7 +26,6 @@ on:
 
 permissions:
   contents: write
-  issues: write
 
 concurrency:
   group: law-research
@@ -69,51 +46,41 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Research the requested branch of law
+      - name: Research tax and corporate law
         env:
           CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
         run: |
           EXTRA_FLAGS=""
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
             EXTRA_FLAGS="--dry-run"
           fi
-
-          if [ "${{ github.event_name }}" = "schedule" ]; then
-            python scripts/run_law_research.py \
-              --repo "$REPO" \
-              --repo-url "https://github.com/$REPO" \
-              --base-ref "${{ github.event.repository.default_branch }}" \
-              --prompt-file "agents/prompts/monitoramento-juridico-regulatorio.md" \
-              --date "" \
-              --model "composer-2.5" \
-              --output-dir "agents/output/law_research" \
-              $EXTRA_FLAGS
-          else
-            python scripts/run_law_research.py \
-              --repo "$REPO" \
-              --repo-url "https://github.com/$REPO" \
-              --base-ref "${{ github.event.repository.default_branch }}" \
-              --branch-of-law "${{ inputs.branch_of_law }}" \
-              --focus "${{ inputs.focus }}" \
-              --date "${{ inputs.date }}" \
-              --model "${{ inputs.model }}" \
-              --max-items "${{ inputs.max_items }}" \
-              --catalog "agents/data/discovered_law.json" \
-              --output-dir "agents/output/law_research" \
-              $EXTRA_FLAGS
+          DATE_ARG=""
+          MODEL_ARG="composer-2.5"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            DATE_ARG="${{ inputs.date }}"
+            MODEL_ARG="${{ inputs.model }}"
           fi
+          python scripts/run_law_research.py \
+            --repo "$REPO" \
+            --repo-url "https://github.com/$REPO" \
+            --base-ref "${{ github.event.repository.default_branch }}" \
+            --prompt-file "agents/prompts/monitoramento-juridico-regulatorio.md" \
+            --report-path "frontend/src/assets/reports/latest.md" \
+            --date "$DATE_ARG" \
+            --model "$MODEL_ARG" \
+            --output-dir "agents/output/law_research" \
+            $EXTRA_FLAGS
 
-      - name: Commit updated research catalog
-        if: github.event_name == 'workflow_dispatch' && inputs.dry_run != 'true'
+      - name: Commit the published report
+        if: github.event_name != 'workflow_dispatch' || inputs.dry_run != 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add agents/data/discovered_law.json
+          git add frontend/src/assets/reports/latest.md
           if git diff --cached --quiet; then
-            echo "Research catalog unchanged."
+            echo "Report unchanged."
             exit 0
           fi
-          git commit -m "chore: record law research ${{ inputs.branch_of_law }}"
+          git commit -m "chore: publish legal intelligence bulletin"
           git push origin "HEAD:${{ github.ref_name }}"

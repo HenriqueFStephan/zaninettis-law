@@ -27,6 +27,11 @@ export const routes: Routes = [
       import('./features/updates/updates.component').then((m) => m.UpdatesComponent),
   },
   {
+    path: 'report',
+    loadComponent: () =>
+      import('./features/report/report.component').then((m) => m.ReportComponent),
+  },
+  {
     path: 'contato',
     loadComponent: () =>
       import('./features/contact/contact.component').then((m) => m.ContactComponent),

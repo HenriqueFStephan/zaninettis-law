@@ -12,6 +12,7 @@ Institutional copy is not written yet. The home page is a selector: five page st
 | `/atuacao` | Practice areas (`/api/v1/services`) |
 | `/artigos` | Articles (`/api/v1/blog`) |
 | `/atualizacoes` | Legal updates (`/api/v1/news`) |
+| `/report` | Tax and corporate bulletin |
 | `/contato` | Contact form (`/api/v1/contact`) |
 | `/studio` | Hidden creative overlay. Not in the public nav. |
 

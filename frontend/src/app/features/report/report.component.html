@@ -1,0 +1,4 @@
+<section class="boletim">
+  <p class="kicker" *ngIf="missing">{{ 'report.empty' | t }}</p>
+  <div *ngIf="html" [innerHTML]="html"></div>
+</section>

@@ -15,6 +15,8 @@ from run_law_research import (  # noqa: E402
     MONITORING_PROMPT_PATH,
     build_monitoring_prompt,
     build_prompt as research_prompt,
+    extract_report_markdown,
+    write_site_report,
 )
 
 
@@ -65,3 +67,15 @@ def test_monitoring_prompt_loads_from_file():
     assert "2026-10-12" in prompt
     assert "15 dias" in prompt
     assert "Markdown" in prompt
+    assert "/report" in prompt
+    assert "não abra issue" in prompt.lower()
+
+
+def test_site_report_is_markdown_for_the_page(tmp_path: Path):
+    wrapped = "```markdown\n# BOLETIM\n\nTexto do relatório.\n```"
+    target = tmp_path / "latest.md"
+    write_site_report(target, wrapped)
+    saved = target.read_text(encoding="utf-8")
+    assert saved == "# BOLETIM\n\nTexto do relatório.\n"
+    assert "[POST]" not in saved
+    assert extract_report_markdown("  # Título\n") == "# Título\n"

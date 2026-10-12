@@ -7,11 +7,11 @@ alwaysApply: true
 
 Angular frontend in `frontend/`, FastAPI in `backend/`. API prefix `/api/v1`.
 
-Public routes: `/`, `/atuacao`, `/artigos`, `/atualizacoes`, `/contato`.
+Public routes: `/`, `/atuacao`, `/artigos`, `/atualizacoes`, `/report`, `/contato`.
 `/studio` is hidden. It files GitHub issues without the `solve` label.
 
 Home page is a structure and palette selector (`DesignService`). Do not replace it with final firm copy until asked.
 
 Do not commit `debt.txt`, `.env`, or tokens. Do not reuse Medi Canopy's Netlify site id.
 
-Actions: `cursor-issue-solver.yml` (label `solve`, `[CORRECTION]`, `[POST]` on `law-research`), `law-research.yml` (Mondays 06:00 Brasília + manual), `deploy-backend.yml` (Render hook).
+Actions: `cursor-issue-solver.yml` (label `solve`, `[CORRECTION]`, `[POST]` on `law-research`), `law-research.yml` (Mondays 06:00 Brasília + manual; publishes the bulletin to `/report`), `deploy-backend.yml` (Render hook).
