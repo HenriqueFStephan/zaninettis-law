@@ -39,6 +39,11 @@ DEFAULT_LABELS = ("law-research", "research")
 TERMINAL_STATUSES = {"FINISHED", "ERROR", "CANCELLED", "EXPIRED"}
 REPO_ROOT = Path(__file__).resolve().parent.parent
 DEFAULT_CATALOG = REPO_ROOT / "agents" / "data" / "discovered_law.json"
+MONITORING_PROMPT_PATH = REPO_ROOT / "agents" / "prompts" / "monitoramento-juridico-regulatorio.md"
+MONITORING_BRANCH = "tributário e societário"
+MONITORING_ISSUE_TITLE = (
+    "BOLETIM DE INTELIGÊNCIA JURÍDICA — TRIBUTÁRIO E SOCIETÁRIO | BRASIL"
+)
 OFFICIAL_SOURCES = (
     "https://www.planalto.gov.br",
     "https://portal.stf.jus.br",
@@ -57,6 +62,27 @@ FOCUS_NOTES = {
 def cursor_headers(cursor_api_key: str) -> dict[str, str]:
     token = base64.b64encode(f"{cursor_api_key}:".encode("utf-8")).decode("ascii")
     return {"Authorization": f"Basic {token}", "Accept": "application/json"}
+
+
+def load_prompt_file(path: Path) -> str:
+    text = path.read_text(encoding="utf-8").strip()
+    if not text:
+        raise ValueError(f"Prompt file is empty: {path}")
+    return text
+
+
+def build_monitoring_prompt(date_str: str, prompt_path: Path | None = None) -> str:
+    source = prompt_path or MONITORING_PROMPT_PATH
+    base = load_prompt_file(source)
+    return (
+        f"{base}\n\n"
+        f"Data de elaboração da pesquisa: {date_str}. "
+        "Considere os últimos 15 dias anteriores a esta data.\n\n"
+        "Regras de entrega:\n"
+        "- Realize pesquisa efetiva na internet antes de redigir o relatório.\n"
+        "- Não modifique arquivos do repositório e não abra pull request.\n"
+        "- Entregue o relatório completo em Markdown, seguindo a estrutura indicada acima."
+    )
 
 
 def build_prompt(branch: str, focus: str, date_str: str, max_items: int, known_urls: list[str]) -> str:
@@ -184,6 +210,20 @@ def render_issue(branch: str, focus: str, date_str: str, items: list[dict[str, A
     return "\n".join(lines).strip() + "\n"
 
 
+def render_monitoring_issue(date_str: str, report: str, agent_url: str) -> str:
+    lines = [
+        f"Monitoramento jurídico e regulatório — **{MONITORING_BRANCH}** em {date_str}.",
+        "",
+        "Para publicar um trecho ou item no site, comente nesta issue começando com `[POST]` e o título desejado.",
+        "Não adicione o rótulo `solve`: isto é pesquisa, não uma tarefa de código.",
+        "",
+    ]
+    if agent_url:
+        lines.extend([f"Agente: {agent_url}", ""])
+    lines.append(report.strip())
+    return "\n".join(lines).strip() + "\n"
+
+
 def publish_issue(*, repo: str, token: str, title: str, body: str, labels: list[str]) -> str:
     headers = github_headers(token)
     for name, color, description in (
@@ -208,7 +248,12 @@ def main() -> int:
     parser.add_argument("--repo", required=True)
     parser.add_argument("--repo-url", required=True)
     parser.add_argument("--base-ref", default="main")
-    parser.add_argument("--branch-of-law", required=True, help="Practice area, e.g. trabalhista")
+    parser.add_argument("--branch-of-law", default="", help="Practice area, e.g. trabalhista")
+    parser.add_argument(
+        "--prompt-file",
+        default="",
+        help="Use a fixed prompt file (Markdown report mode) instead of the JSON digest prompt",
+    )
     parser.add_argument("--focus", choices=tuple(FOCUS_NOTES), default="updates")
     parser.add_argument("--date", default="")
     parser.add_argument("--model", default=DEFAULT_MODEL)
@@ -220,18 +265,24 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true")
     args = parser.parse_args()
 
-    branch = args.branch_of_law.strip()
+    prompt_file = args.prompt_file.strip()
+    monitoring_mode = bool(prompt_file)
+    branch = args.branch_of_law.strip() or (MONITORING_BRANCH if monitoring_mode else "")
     if not branch:
-        log("--branch-of-law is required", error=True)
+        log("--branch-of-law is required unless --prompt-file is set", error=True)
         return 2
     date_str = args.date.strip() or datetime.now(timezone.utc).strftime("%Y-%m-%d")
     catalog_path = Path(args.catalog)
     catalog = load_catalog(catalog_path)
     known = [str(item.get("source_url")) for item in catalog.get("items", []) if isinstance(item, dict) and item.get("source_url")]
-    prompt = build_prompt(branch, args.focus, date_str, args.max_items, known)
+    if monitoring_mode:
+        prompt = build_monitoring_prompt(date_str, Path(prompt_file))
+    else:
+        prompt = build_prompt(branch, args.focus, date_str, args.max_items, known)
 
     if args.dry_run:
-        log(f"[DRY RUN] Would research '{branch}' ({args.focus}) on {date_str}\n")
+        mode = "monitoramento" if monitoring_mode else args.focus
+        log(f"[DRY RUN] Would research '{branch}' ({mode}) on {date_str}\n")
         log(prompt)
         return 0
 
@@ -275,7 +326,22 @@ def main() -> int:
         log(f"Run {run_id} ended with status {status}", error=True)
         return 1
 
-    payload = extract_json_payload(str(final_run.get("result") or ""))
+    result_text = str(final_run.get("result") or "").strip()
+    if monitoring_mode:
+        if not result_text:
+            log("Agent returned an empty report; skipping issue creation.", error=True)
+            return 1
+        title = f"[RESEARCH] {MONITORING_ISSUE_TITLE} — {date_str}"
+        body = render_monitoring_issue(date_str, result_text, agent_url)
+        if args.output_dir:
+            out = Path(args.output_dir)
+            out.mkdir(parents=True, exist_ok=True)
+            (out / f"{date_str}-monitoramento-tributario-societario.md").write_text(body, encoding="utf-8")
+        url = publish_issue(repo=args.repo, token=github_token, title=title, body=body, labels=list(DEFAULT_LABELS))
+        log(f"Opened {url}")
+        return 0
+
+    payload = extract_json_payload(result_text)
     items = [item for item in payload.get("items", []) if isinstance(item, dict) and item.get("source_url")]
     if not items:
         log("No sourced items returned; skipping issue creation.")

@@ -11,7 +11,11 @@ from run_issue_solver_agents import (  # noqa: E402
     build_prompt,
     skip_reason,
 )
-from run_law_research import build_prompt as research_prompt  # noqa: E402
+from run_law_research import (  # noqa: E402
+    MONITORING_PROMPT_PATH,
+    build_monitoring_prompt,
+    build_prompt as research_prompt,
+)
 
 
 def make_issue(**overrides) -> Issue:
@@ -51,3 +55,13 @@ def test_law_research_prompt_names_the_branch():
     assert "trabalhista" in prompt
     assert "planalto.gov.br" in prompt
     assert "solve" not in prompt.lower()
+
+
+def test_monitoring_prompt_loads_from_file():
+    assert MONITORING_PROMPT_PATH.is_file()
+    prompt = build_monitoring_prompt("2026-10-12")
+    assert "MONITORAMENTO JURÍDICO E REGULATÓRIO" in prompt
+    assert "BOLETIM DE INTELIGÊNCIA JURÍDICA" in prompt
+    assert "2026-10-12" in prompt
+    assert "15 dias" in prompt
+    assert "Markdown" in prompt

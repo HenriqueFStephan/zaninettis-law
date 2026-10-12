@@ -14,4 +14,4 @@ Home page is a structure and palette selector (`DesignService`). Do not replace 
 
 Do not commit `debt.txt`, `.env`, or tokens. Do not reuse Medi Canopy's Netlify site id.
 
-Actions: `cursor-issue-solver.yml` (label `solve`, `[CORRECTION]`, `[POST]` on `law-research`), `law-research.yml` (manual), `deploy-backend.yml` (Render hook).
+Actions: `cursor-issue-solver.yml` (label `solve`, `[CORRECTION]`, `[POST]` on `law-research`), `law-research.yml` (Mondays 06:00 Brasília + manual), `deploy-backend.yml` (Render hook).
