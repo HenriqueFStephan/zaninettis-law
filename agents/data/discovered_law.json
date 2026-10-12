@@ -1,3 +1,60 @@
 {
-  "items": []
+  "items": [
+    {
+      "branch": "trabalhista",
+      "focus": "updates",
+      "title": "Lei nº 15.371/2026 — licença-paternidade ampliada e salário-paternidade",
+      "source_url": "https://www.in.gov.br/web/dou/-/lei-n-15.371-de-31-de-marco-de-2026-697067576",
+      "seen_on": "2026-10-12"
+    },
+    {
+      "branch": "trabalhista",
+      "focus": "updates",
+      "title": "Lei nº 15.377/2026 — informação sobre vacinação, HPV e exames preventivos na CLT",
+      "source_url": "https://in.gov.br/en/web/dou/-/lei-n-15.377-de-2-de-abril-de-2026-697377506",
+      "seen_on": "2026-10-12"
+    },
+    {
+      "branch": "trabalhista",
+      "focus": "updates",
+      "title": "Decreto nº 12.926/2026 — garantias trabalhistas em contratos da administração federal",
+      "source_url": "https://in.gov.br/en/web/dou/-/decreto-n-12.926-de-13-de-abril-de-2026-699569658",
+      "seen_on": "2026-10-12"
+    },
+    {
+      "branch": "trabalhista",
+      "focus": "updates",
+      "title": "Lei nº 15.222/2025 — prorrogação de licença-maternidade e salário-maternidade por internação",
+      "source_url": "https://www.in.gov.br/en/web/dou/-/lei-n-15.222-de-29-de-setembro-de-2025-659318205",
+      "seen_on": "2026-10-12"
+    },
+    {
+      "branch": "trabalhista",
+      "focus": "updates",
+      "title": "Portaria MTE nº 104/2026 — revisão da NR-28 (fiscalização e penalidades)",
+      "source_url": "https://www.in.gov.br/web/dou/-/portaria-mte-n-104-de-29-de-janeiro-de-2026-684175875",
+      "seen_on": "2026-10-12"
+    },
+    {
+      "branch": "trabalhista",
+      "focus": "updates",
+      "title": "Lei nº 15.179/2025 — crédito consignado digital para trabalhadores CLT",
+      "source_url": "https://www.in.gov.br/web/dou/-/lei-n-15.179-de-24-de-julho-de-2025-644406014",
+      "seen_on": "2026-10-12"
+    },
+    {
+      "branch": "trabalhista",
+      "focus": "updates",
+      "title": "STF — Tema 1.232 (RE 1.387.795): execução contra empresa de grupo econômico",
+      "source_url": "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=6422105&numeroProcesso=1387795&numeroTema=1232",
+      "seen_on": "2026-10-12"
+    },
+    {
+      "branch": "trabalhista",
+      "focus": "updates",
+      "title": "STF — Tema 1.370 (RE 1.520.468): afastamento remunerado de vítima de violência doméstica",
+      "source_url": "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=7064773&numeroProcesso=1520468&numeroTema=1370",
+      "seen_on": "2026-10-12"
+    }
+  ]
 }
