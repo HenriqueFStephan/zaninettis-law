@@ -1,294 +1,343 @@
 # BOLETIM DE INTELIGÊNCIA JURÍDICA — TRIBUTÁRIO E SOCIETÁRIO | BRASIL
 
-**Data de elaboração:** 09/11/2026  
-**Intervalo pesquisado:** 25/10/2026 a 09/11/2026 (15 dias)  
-**Metodologia:** buscas em fontes oficiais (DOU, Planalto, gov.br/RFB, PGFN, CONFAZ, STF, STJ, CVM, DREI) e confirmação cruzada em publicações técnicas (ConJur, Valor Econômico, escritórios).
+**Data de elaboração:** 16 de novembro de 2026  
+**Período pesquisado:** 1 a 16 de novembro de 2026 (15 dias anteriores à data da pesquisa)  
+**Abrangência:** Direito Tributário e Direito Societário — Brasil
 
 ---
 
-## Parte I — Resumo executivo
+## Metadados e limitações metodológicas
+
+A pesquisa priorizou fontes oficiais e institucionais (gov.br, STF, STJ, CONFAZ, CVM, CGIBS, Imprensa Nacional/DOU) e usou fontes especializadas apenas para triagem, com confirmação sempre que possível na origem primária.
+
+**Limitações relevantes do período:**
+
+- O **Regulamento comum IBS/CBS “versão 2.0”** foi anunciado pela Receita Federal e pelo CGIBS, mas **não foi localizada publicação no DOU até 16/11/2026**; prevalecem o Decreto nº 12.955/2026 (CBS) e a Resolução CGIBS nº 6/2026 (IBS).
+- O julgamento do **STJ — Tema 1.412** (descontos/bonificações e PIS/COFins) foi amplamente noticiado em **11/11/2026** (incluindo Valor Econômico), mas o sistema de repetitivos do STJ **não refletia, na data da pesquisa, a tese publicada** — recomenda-se aguardar acórdão/DJe oficial antes de alterações definitivas de apuração.
+- A **Nota Técnica DREI nº 105/2026** e o **Ofício Circular nº 48/2026** constam em páginas de Juntas Comerciais, **sem data de publicação confirmada no período** no site oficial do DREI; não foram tratados como novidade do intervalo pesquisado.
+- O **Convênio ICMS nº 131/2026** (prorrogação massiva de benefícios) foi publicado em **29/10/2026** — fora do recorte temporal, mas com **ratificações e repercussões** ainda em noviembre.
+
+---
+
+## Parte I — Resumo executivo (10 atualizações mais relevantes)
 
 | # | Assunto | Data | Órgão | Relevância | Principal impacto prático |
 |---|---------|------|-------|------------|---------------------------|
-| 1 | Tema 118/STF: ISS excluído da base do PIS e da Cofins | 21/10/2026 | STF | **Alta** | Redução de base para prestadores de serviços; modulação ainda pendente |
-| 2 | Tema 1.348/STF: imunidade de ITBI na integralização de capital (inclusive imobiliárias) | 19-20/10/2026 | STF | **Alta** | Reorganizações societárias e holdings com imóveis; risco de questionamento por simulação |
-| 3 | LC 238/2026 e Portaria Conjunta RFB/PGFN 740/2026 — remissão de débitos do MEI | 21 e 22/10/2026 | Congresso / RFB / PGFN | **Alta** | Extinção automática de débitos federais do DAS-MEI a partir de 01/01/2027, com contrapartidas |
-| 4 | Ato Técnico Conjunto RFB/CGIBS nº 10/2026 — especificações fiscais IBS/CBS | 28-29/10/2026 | RFB / CGIBS | **Alta** | Parâmetros oficiais de DF-e e tabela cClassTrib v1.71 para adequação de ERP |
-| 5 | Decreto 13.140/2026 e Resolução CGSN 195/2026 — simplificação para nanoempreendedor e MEI | 21-22/10/2026 | Presidência / CGSN | **Alta** | Dispensa de CNPJ/DF-e (nano) e DASN-Simei como DF-e (MEI) a partir de 2027 |
-| 6 | Tema 843/STF: créditos presumidos de ICMS fora da base do PIS/Cofins | 07/10/2026 | STF | **Alta** | Benefício a setores com incentivos estaduais; revisão de apurações e contencioso |
-| 7 | Tema 1.364/STJ: vedação de crédito de PIS/Cofins sobre ICMS das aquisições | 14/10/2026 | STJ | **Alta** | Confirmação legal pós-Lei 14.592/2023; glosa de créditos |
-| 8 | Anúncio da versão 2.0 dos regulamentos de CBS/IBS | 03-04/11/2026 | RFB (comunicação) | **Média** | Expectativa de nova norma infralegal; até 09/11 não há publicação no DOU confirmada |
-| 9 | Resolução CVM 251/2026 — agências de rating | 09/11/2026 | CVM | **Média** | Convergência com UE; vigência em 01/12/2026 |
-| 10 | Resolução CVM 249/2026 — Programa Piloto DLT | 13-14/10/2026 | CVM | **Média** | Sandbox regulatório para tokenização e mercado de capitais |
+| 1 | Ato Conjunto RFB/CGIBS nº 7/2026 — calendário de DF-e e DeRE | 11/11/2026 (ato); publicação DOU referida em 13/11 | RFB + CGIBS | **Alta** | Reescalonamento de obrigatoriedades de documentos fiscais eletrônicos (2027) e 1ª entrega mensal da DeRE para **15/12/2026** |
+| 2 | Atualização do PGDAS-D (Simples + RTC) — FS12 e regime de apuração | 13/11/2026 | Receita Federal | **Alta** | PA 11 e 12/2026 exigem informar folha 12 meses (FS12); fim da escolha caixa/competência; apuração integral por competência a partir de 2027 |
+| 3 | Portaria Cotec nº 342/2026 — código aberto da Calculadora RTC no GitHub | 12–16/11/2026 | Receita Federal | **Alta** | Padronização auditável dos cálculos de CBS/RTC para ERPs e compliance |
+| 4 | STF — Tema 118 (ISS fora da base do PIS/COFins): pós-julgamento e petição Fazenda | 05–16/11/2026 | STF | **Alta** | Tese vinculante consolidada (21/10); indefERimento monocrático (05/11) de pedido da PGFN (Pet. 133153/2026); acórdão ainda em redação (Cármen Lúcia) |
+| 5 | STJ — Tema 1.412: descontos e bonificações fora da base do PIS/COFins | 11/11/2026* | STJ (1ª Seção) | **Alta** | Uniformização favorável ao varejo/distribuição; exceção para bonificação em dinheiro com acréscimo patrimonial definitivo (*confirmação oficial pendente) |
+| 6 | CGIBS — 4ª Reunião Ordinária: DeRE, DF-e, dispensa de CNPJ (produtor rural/TA) | 10–13/11/2026 | CGIBS + RFB | **Alta** | Alívio temporário de CNPJ (2027–2028) e alinhamento regulatório à versão 2 do Regulamento IBS |
+| 7 | Consulta pública — IN RFB 2.228/2024 (Adicional CSLL / GloBE) e IN 1.520/2014 | 06–16/11/2026 | Receita Federal | **Alta** | Adaptação às orientações OCDE (Side-by-Side Package, jan/2026) para multinacionais |
+| 8 | Calculadora da Transação Tributária (RFB + PGFN) | 09/11/2026 | Receita Federal | **Média** | Simulação orientativa até **29/01/2027** (Editais 6 e 10/2026 PGFN) |
+| 9 | Resoluções CVM 250 e 251 | 09/11/2026 (DOU) | CVM | **Média** | Consultoria de VM e agências de rating; vigência **01/12/2026** |
+| 10 | CONFAZ — Ato Declaratório 28/26 (Convênio ICMS 125/26) | 13/11/2026 | CONFAZ | **Média** | Ratificação de convênio sobre parcelamento/anistia de débitos de ICM/ICMS em UFs listadas |
 
 ---
 
 ## Parte II — Atualizações tributárias
 
-### 1. STF — Tema 118 (RE 592.616): exclusão do ISS da base de cálculo do PIS e da Cofins
+### 1. Ato Conjunto RFB/CGIBS nº 7, de 11 de novembro de 2026 — cronograma de DF-e e DeRE
 
-1. **Título:** Exclusão do ISS da base do PIS e da Cofins — repercussão geral.  
-2. **Datas:** Julgamento em 21/10/2026; ata publicada em 23/10/2026. Modulação: **não definida** (possível em embargos de declaração).  
-3. **Fontes:** [Portal STF — Tema 118](https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=2637509&numeroTema=118); [Notícia STF](https://noticias.stf.jus.br/postsnoticias/stf-decide-que-iss-nao-integra-base-de-calculo-do-pis-e-da-cofins/).  
-4. **Base:** RE 592.616, Tema 118 da repercussão geral; art. 195, I, “b”, CF.  
-5. **Contexto anterior:** Fisco e parte da jurisprudência admitem ISS na base por “receita bruta” ou por ausência de mecanismo de compensação equivalente ao ICMS.  
-6. **Mudança:** Por maioria (6x5, voto de desempate do ministro Luiz Fux), fixou-se que o ISS é ingresso transitório, não integrando a base do PIS/Cofins, por analogia lógica ao Tema 69 (ICMS).  
-7. **Análise:** Decisão alinha a interpretação constitucional da base das contribuições à titularidade econômica do ingresso. Pleito de compensação tributária foi conhecido apenas parcialmente (matéria infraconstitucional). **Modulação pendente** afeta o valor recuperável e o risco de exercícios pretéritos.  
-8. **Impactos:** Empresas prestadoras de serviços podem recalcular bases, revisar PER/DCOMP e ações judiciais. Municípios e União podem sentir efeito arrecadatório.  
-9. **Riscos/Oportunidades:** Oportunidade de recuperação e ajuste prospectivo; risco de autuação até consolidação do acórdão e definição de efeitos.  
-10. **Relevância:** **Alta.**  
-**Situação jurídica:** Julgamento concluído; entendimento vinculante (tese fixada); modulação pendente.
-
----
-
-### 2. STF — Tema 843 (RE 835.818): créditos presumidos de ICMS fora da base do PIS/Cofins
-
-1. **Título:** Inconstitucionalidade da inclusão de créditos presumidos de ICMS na base do PIS/Cofins.  
-2. **Data do julgamento:** 07/10/2026.  
-3. **Fonte:** [Portal STF — Tema 843](https://portal.stf.jus.br/jurisprudenciarepercussao/verandamentoprocesso.asp?classeprocesso=re&incidente=4630911&numeroprocesso=835818&numerotema=843).  
-4. **Tese fixada:** “Surge incompatível, com a Constituição Federal, a inclusão, na base de cálculo da Cofins e da contribuição ao PIS, de créditos presumidos do Imposto sobre Circulação de Mercadorias e Serviços - ICMS.”  
-5. **Contexto:** Estados concedem créditos presumidos como renúncia fiscal; União incluía valores na base das contribuições.  
-6. **Mudança:** Confirma que benefício estadual não é receita nova da empresa.  
-7. **Análise:** Distinto do Tema 69 (ICMS destacado) e do Tema 118 (ISS). Não se estende automaticamente a outros benefícios sem análise própria. Controvérsia permanece em hipóteses reguladas pela Lei 14.789/2023 e orientações administrativas para períodos recentes — **verificar caso a caso**.  
-8. **Impactos:** Agroindústria e setores beneficiados por incentivos estaduais; potencial contencioso e compensação.  
-9. **Medidas:** Mapear incentivos por estabelecimento; segregar bases; avaliar modulação quando publicada.  
-10. **Relevância:** **Alta.**
+| Campo | Conteúdo |
+|-------|----------|
+| **Publicação / vigência** | Assinatura em 11/11/2026; altera o Ato Conjunto RFB/CGIBS nº 4/2026 |
+| **Fonte** | Texto no DOU: http://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=ouucTgkRXRE%3D |
+| **Normas relacionadas** | Arts. 112 do Decreto nº 12.955/2026 e da Resolução CGIBS nº 6/2026; LC nº 214/2025 |
+| **Contexto anterior** | Ato Conjunto nº 4/2026 já disciplinava datas de obrigatoriedade de NF-e, NFS-e, CT-e, DeRE etc. |
+| **Mudança** | Reorganização de prazos para **diversos documentos** (ex.: plataformas digitais, serviços com ISS, setores de transporte, imóveis, Simples) majoritariamente para **01/01/2027** ou **01/03/2027**; eventos mensais da **DeRE**: 1º lote em **15/12/2026** (competência nov/2026); D-1121 e D-2102 a partir de **15/02/2027** |
+| **Análise** | Ato técnico-operacional de implementação da reforma do consumo; não altera alíquotas, mas define o **marco de conformidade documental** — falha aqui gera contingência em cascata com IBS/CBS a partir de 2027 |
+| **Impactos** | Instituições financeiras, saúde suplementar, prognósticos, varejistas digitais, condomínios, locadores e optantes pelo Simples com operações mistas |
+| **Riscos / oportunidades** | **Risco:** subestimar duas datas distintas (jan/2027 vs mar/2027) na mesma empresa. **Oportunidade:** projetos de adequação de ERP e governança fiscal com horizonte definido |
+| **Situação jurídica** | Norma publicada e vigente |
+| **Relevância** | **Alta** |
 
 ---
 
-### 3. STF — Tema 1.455 (ARE 1.593.784): IPTU com alíquota fixada pela área do imóvel
+### 2. Atualização do PGDAS-D para a Reforma Tributária (Simples Nacional)
 
-1. **Título:** Modulação de efeitos — IPTU progressivo por área.  
-2. **Datas:** Embargos acolhidos parcialmente em 13/10/2026 (sessão virtual 02-09/10/2026).  
-3. **Fontes:** [Portal STF — Tema 1455](https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=ARE&incidente=7524215&numeroProcesso=1593784&numeroTema=1455); [Notícia STF sobre modulação](https://noticias.stf.jus.br/postsnoticias/stf-define-alcance-de-decisao-sobre-aliquotas-de-iptu/).  
-4. **Mudança:** Efeitos **ex nunc** a partir de **12/08/2026**, ressalvados débitos anteriores não pagos e processos pendentes até essa data.  
-5. **Impactos:** Municípios que usavam área como critério de alíquota; empresas com grande parque imobiliário.  
-6. **Relevância:** **Média** (municipal, mas com efeito patrimonial relevante para grupos imobiliários).  
-
----
-
-### 4. STF — ADI 7.918: extinção do “ICMS Verde” em Alagoas
-
-1. **Título:** Validade da revogação do critério ambiental na repartição de ICMS municipal.  
-2. **Data:** Julgamento virtual encerrado em **03/11/2026** (unanimidade).  
-3. **Fonte:** [Notícia STF](https://noticias.stf.jus.br/postsnoticias/stf-mantem-extincao-do-icms-verde-em-alagoas/).  
-4. **Mudança:** Estados não são obrigados a manter critérios ambientais na parcela variável do ICMS repassado aos municípios; revogação não configura, no caso, retrocesso ambiental automático.  
-5. **Impactos:** Precedente para outros estados; planejamento de políticas locais de repasse.  
-6. **Relevância:** **Média** (federativo; sinal para revisão de incentivos subnacionais).  
+| Campo | Conteúdo |
+|-------|----------|
+| **Publicação** | 13/11/2026 (atualizado 16/11/2026) |
+| **Fonte** | https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/pgdas-d-e-atualizado-para-atender-a-reforma-tributaria-a-partir-de-novembro-de-2026 |
+| **Normas relacionadas** | Adaptações do Simples à LC nº 214/2025 e normas RTC |
+| **Contexto anterior** | Escolha entre apuração por caixa ou competência; ausência de campo FS12 padronizado para RTC |
+| **Mudança** | **PA 11/2026 e 12/2026:** informação obrigatória da folha dos últimos 12 meses (FS12) para todas as atividades; **a partir de 2027** apuração somente por **competência**; PGDAS-D alimenta alíquotas efetivas de IBS/CBS nos DF-e |
+| **Análise** | Convergência do Simples ao modelo de competência alinha receita à lógica do IVA; FS12 é dado crítico para transição RTC em 2026 |
+| **Impactos** | ME, EPP, MEI com folha variável; software houses de DAS e emissores nacionais |
+| **Medidas** | Retificar PA nov/dez; auditar bases de folha; reconciliar com eSocial/EFD-Reinf antes do 1º DF-e com IBS/CBS |
+| **Relevância** | **Alta** |
 
 ---
 
-### 5. Lei Complementar 238/2026 e regulamentação — remissão de débitos do MEI
+### 3. Portaria Cotec nº 342/2026 — Calculadora de Tributos em código aberto (GitHub)
 
-1. **Título:** Remissão integral de créditos federais de responsabilidade de MEI.  
-2. **Datas:** Sanção/publicação em **21/10/2026**; efeitos da remissão a partir de **01/01/2027** (art. 10, II). Portaria Conjunta RFB/PGFN **740/2026** em **22/10/2026** (DOU **28/10/2026**).  
-3. **Fontes:** [LC 238/2026 — Planalto](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp238.htm); [FAQ PGFN](https://www.gov.br/pgfn/pt-br/servicos/perguntas-frequentes/perguntas-frequentes-perdao-do-mei); [Notícia Planalto](https://www.gov.br/planalto/pt-br/acompanhe-o-planalto/noticias/2026/10/lula-sanciona-lei-que-amplia-beneficios-para-meis-e-envia-ao-congresso-pec-sobre-tarifa-zero-no-transporte-coletivo).  
-4. **Âmbito:** Contribuição previdenciária do MEI no DAS (LC 123, art. 18-A), vencida até **13/10/2026**, com juros, multas e encargos; inscritos ou não em dívida ativa. **Não** abrange ICMS/ISS.  
-5. **Contrapartidas:** Adimplência do DAS nos **6 meses** seguintes à vigência da LC; desistência/renúncia em ações judiciais para baixa de débitos discutidos; sem restituição de valores já pagos.  
-6. **Mudança operacional:** Baixa **de ofício** a partir de 01/01/2027; parcelamentos exclusivamente de débitos remidos serão extintos.  
-7. **Análise:** Benefício societário-indireto (alívio de passivo do empreendedor individual), com disciplina processual específica para litígios.  
-8. **Relevância:** **Alta.**
-
----
-
-### 6. Reforma tributária do consumo — Decreto 13.140/2026 e Resolução CGSN 195/2026
-
-1. **Título:** Simplificação para nanoempreendedor e MEI na transição IBS/CBS.  
-2. **Datas:** Decreto **21/10/2026** (DOU extra); Resolução CGSN **21/10/2026** (DOU **22/10/2026**); efeitos da Resolução CGSN a partir de **01/01/2027**.  
-3. **Fontes:** [Decreto 13.140/2026](https://planalto.gov.br/ccivil_03/_ato2023-2026/2026/decreto/d13140.htm); [Receita Federal — notícia](https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/outubro/novas-medidas-simplificam-obrigacoes-da-reforma-tributaria-para-nanoempreendedores-e-meis).  
-4. **Mudanças centrais:** Dispensa de CNPJ e de emissão de DF-e de IBS/CBS para **nanoempreendedor** (com ressalvas); **DASN-Simei** como documento fiscal eletrônico** do MEI em vendas/serviços a consumidor final PF sem CNPJ.  
-5. **Análise:** Medidas de proporcionalidade na transição; atenção à opção pelo regime regular de IBS/CBS e ao calendário de competências do CGIBS (efeitos de dispensa de DF-e do nano em IBS a partir de 01/01/2029, conforme decreto).  
-6. **Relevância:** **Alta** para microestrutura empresarial e compliance simplificado.  
+| Campo | Conteúdo |
+|-------|----------|
+| **Publicação** | Notícia RFB 16/11/2026; Portaria 12/11/2026; DOU 13/11/2026 (Seção 1, Extra B) |
+| **Fonte** | https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/receita-federal-publica-primeiro-codigo-fonte-aberto-no-github-e-amplia-transparencia-da-reforma-tributaria |
+| **Repositórios** | https://github.com/ReceitaFederal/calculadora-rtc-regime-regular · https://github.com/ReceitaFederal/calculadora-rtc-simples-nacional · https://github.com/ReceitaFederal/calculadora-rtc-gerador-danfse |
+| **Mudança** | Licença MIT; hashes das versões iniciais para integridade |
+| **Análise** | Reduz assimetria informacional entre Fisco e contribuinte na transição 2026–2027 |
+| **Impactos** | Desenvolvedores, CFOs, consultorias de implementação RTC |
+| **Relevância** | **Alta** |
 
 ---
 
-### 7. Ato Técnico Conjunto RFB/SUFIS/CGIBS nº 10/2026
+### 4. Reforma tributária — Regulamento IBS/CBS “2.0” (expectativa sem publicação no período)
 
-1. **Título:** Aprovação conjunta de documentação técnica de DF-e para IBS e CBS.  
-2. **Datas:** 28/10/2026; DOU **29/10/2026** (Seção 1, Edição Extra C).  
-3. **Fonte:** [DOU via portal CTE](http://www.cte.fazenda.gov.br/portal/exibirArquivo.aspx?conteudo=VKMV8IDTX8A%3D).  
-4. **Conteúdo:** Aprova NTs para NF-e/NFC-e, CT-e, NFCom, BP-e, NF3e, NFAg, NFGas, NF-e ABI; Informe Técnico 2025.002 v1.71; **cClassTrib v1.71**. Vigência na publicação.  
-5. **Impactos:** Projetos de TI, parametrização fiscal, cronogramas de homologação com fornecedores; base para destaque de IBS/CBS em notas (incluindo NFS-e desde 01/10/2026, conforme comunicações da RFB).  
-6. **Relevância:** **Alta.**
-
----
-
-### 8. IN RFB nº 2.346/2026 — autorregularização (Selo Confia e Selo Sintonia)
-
-1. **Título:** Programa de autorregularização para contribuintes com selos de conformidade.  
-2. **Datas:** 13/10/2026; publicação DOU **29/10/2026** (Edição Extra C).  
-3. **Fonte:** [Atlas Público / texto do ato](https://atlaspublico.com.br/regulacao/dou/instrucao-normativa-rfb-n-2-346-de-13-de-outubro-de-2026-887500).  
-4. **Mudança:** Disciplina adesão em até **60 dias** da “Comunicação para Autorregularização”, via processo digital (LC 225/2026, art. 42).  
-5. **Impactos:** Grandes contribuintes em programas de conformidade cooperativa; gestão de risco contencioso.  
-6. **Relevância:** **Média** (segmentada).  
+| Campo | Conteúdo |
+|-------|----------|
+| **Datas** | Coletiva 11/11; declaração auditor RFB 13/11 (previsão 16 ou 17/11) |
+| **Fontes** | https://valor.globo.com/brasil/noticia/2026/11/04/cbs-e-ibs-devem-ter-nova-regra-em-breve.ghtml · https://www.reformatributaria.com/iva/versao-2-0-dos-regulamentos-de-ibs-cbs-fica-para-o-inicio-da-proxima-semana-diz-auditor-fiscal/ |
+| **Situação** | Aprovado internamente (CGIBS, RFB, PGFN), **aguardava assinatura presidencial**; **sem decreto/resolução substitutiva publicada** até o fechamento desta pesquisa |
+| **Análise** | Distinção necessária entre anúncio político e norma vigente (LC 214/2025 e Decreto 12.955/2026 permanecem paradigma) |
+| **Relevância** | **Alta** (agenda); efeitos normativos **pendentes** |
 
 ---
 
-### 9. PGFN — transações e prorrogações
+### 5. STF — Tema 118 (RE 592.616) — exclusão do ISS da base do PIS e da COFINS
 
-**PGDAU nº 11/2026** (III Semana da Regularização, adesão até **09/10/2026**): confirmado encerramento no período inicial da janela pesquisada — [Notícia PGFN](https://www.gov.br/pgfn/pt-br/assuntos/noticias/2026/iii-semana-nacional-da-regularizacao-tributaria).
-
-**PGDAU nº 12/2026** (FGTS e contribuições da LC 110/2001): adesão de **15/10/2026** a **29/01/2027** — [PGFN — página de editais](https://www.gov.br/pgfn/pt-br/servicos/editais-de-notificacao/acordo-de-transacao-por-adesao-1); destaque para parcelamento de débitos rescisórios em até **12** prestações ([notícia 23/10/2026](https://www.gov.br/pgfn/pt-br/assuntos/noticias/2026/pgfn-lanca-edital-para-negociar-dividas-de-fgts-e-contribuicoes-sociais-de-ate-r-45-mi)).
-
-**Portaria RFB nº 742/2026** (27/10/2026, DOU 29/10/2026): prorroga adesão aos Editais de Transação nº 9 e 10/2026 — relevante para contencioso administrativo em andamento.
-
-**Relevância:** **Média a alta** conforme perfil do devedor.
-
----
-
-### 10. CONFAZ — convênios ICMS de parcelamento, remissão e regularização
-
-**Atos Declaratórios 25/2026** (19/10/2026) e **26/2026** (29/10/2026) ratificam convênios aprovados em outubro (reuniões 434 e 435), incluindo programas de parcelamento, remissão e regularização vinculados, entre outros, à LC 236/2026 — [CONFAZ — AD 25/26](https://www.confaz.fazenda.gov.br/legislacao/atos-declaratorios/2026/ato-declaratorio-25-26); [AD 26/26](https://www.confaz.fazenda.gov.br/legislacao/atos-declaratorios/2026/ato-declaratorio-26-26).
-
-**Relevância:** **Média** (estadual; oportunidade de regularização de ICMS).
+| Campo | Conteúdo |
+|-------|----------|
+| **Julgamento de mérito** | 21/10/2026 (fora do período, mas com repercussões em noviembre) |
+| **Atos no período** | 05/11/2026: decisão monocrática **indeferindo** pedido (Petição 133153/2026, “Suspensão Nacional”); 06/11: DJe; 13/11: remessa ao gabinete do min. Nunes Marques; redação do acórdão com a min. Cármen Lúcia |
+| **Fonte** | https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=2637509&numeroTema=118 · Informativo STF 1236 (10/11/2026): https://www.stf.jus.br/arquivo/informativo/documento/informativo1236.htm |
+| **Tese (21/10/2026)** | *"O valor correspondente ao ISS não integra a base de cálculo das contribuições sociais referentes ao PIS e à COFINS [...]"* |
+| **Contexto** | Extensão da lógica do Tema 69 (ICMS) ao ISS |
+| **Análise** | Vitória para prestadores de serviços no regime não cumulativo; **modulação de efeitos não definida** no julgamento — incerteza sobre marco temporal e regime de caixa (debate em fontes especializadas, sem ato normativo federal homologatório no período) |
+| **Impactos** | Créditos/recuperação cinco anos; revisão EFD-Contribuições; setores com ISS relevante (saude, tecnologia, construção de serviços) |
+| **Oportunidades** | Inventário de bases com ISS embutido; PER/DCOMP e discussões administrativas |
+| **Riscos** | Antecipar modulação; não harmonizar com exclusões já previstas na LC 214 para CBS |
+| **Situação** | Julgamento concluído (tese fixada); **efeitos temporais e acórdão em elaboração** |
+| **Relevância** | **Alta** |
 
 ---
 
-### 11. Reforma tributária — versão 2.0 dos regulamentos de CBS e IBS
+### 6. STJ — Tema 1.412 — descontos e bonificações na base do PIS/COFins
 
-**Situação no período:** Em **03/11/2026**, a Receita Federal informou à imprensa que a versão **2.0** dos regulamentos seria publicada “na próxima semana” ([Valor Econômico, 04/11/2026](https://valor.globo.com/brasil/noticia/2026/11/04/cbs-e-ibs-devem-ter-nova-regra-em-breve.ghtml)). Até **09/11/2026**, **não foi localizada publicação oficial** no DOU de nova versão consolidada do Decreto 12.955/2026 ou da Resolução CGIBS nº 6/2026.
-
-**Impacto esperado (prognóstico fundamentado):** Incorporação de ~4.800 contribuições; possível vigência sem novo período de adaptação (conforme comunicações da RFB citadas na imprensa especializada). **Risco:** incerteza normativa às vésperas da fase de testes de 2026/2027.
-
-**Relevância:** **Alta** (agenda imediata), **situação:** proposta/expectativa regulatória.
-
----
-
-### 12. Temas sem novidade normativa relevante no intervalo
-
-- **IRPJ/CSLL — IN RFB 2.342/2026** (GloBE/Adicional da CSLL): publicada em **18/09/2026** — fora do intervalo; apenas notícia institucional em **01/10/2026**.  
-- **Dividendos/IRPFM:** sem alteração legislativa federal confirmada no período.
-
----
-
-## Parte III — Atualizações societárias
-
-### 1. STF — Tema 1.348 (RE 1.495.108): imunidade de ITBI na integralização de capital
-
-1. **Título:** ITBI na transmissão de imóveis para integralização de capital social.  
-2. **Datas:** Julgamento virtual encerrado **19/10/2026**; certidão **20/10/2026**.  
-3. **Fonte:** [Portal STF — Tema 1348](https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=6929423&numeroProcesso=1495108&numeroTema=1348).  
-4. **Tese (síntese):** Imunidade do ITBI (CF, art. 156, § 2º, I) é **incondicionada** quanto à atividade preponderante, **inclusive imobiliária**; limitada ao valor do capital integralizado (Tema 796); não alcança simulação/fraude.  
-5. **Contexto:** Municípios cobravam ITBI de holdings e incorporadoras invocando atividade preponderante imobiliária.  
-6. **Impactos societários:** Facilita reorganizações patrimoniais, aportes de imóveis e estruturação de holdings; exige documentação de substância e valor de integralização.  
-7. **Riscos:** Fiscalização por simulação; recuperação de ITBI pago depende de modulação e prescrição caso a caso.  
-8. **Relevância:** **Alta.**
+| Campo | Conteúdo |
+|-------|----------|
+| **Data reportada** | 11/11/2026 |
+| **Fonte primária secundária** | https://valor.globo.com/legislacao/noticia/2026/11/11/varejo-vence-no-stj-disputa-sobre-tributao-de-descontos-e-bonificaes.ghtml |
+| **REsp paradigmas** | 2.221.794, 2.221.800, 2.223.143 |
+| **Tese noticiada** | Descontos e bonificações vinculados à compra/venda reduzem custo de aquisição e **não compõem** base do PIS/COFins, mesmo condicionados a contrapartidas comerciais; **exceção:** bonificação em dinheiro com ingresso patrimonial novo, positivo e definitivo |
+| **Contexto** | Divergência entre 1ª e 2ª Turmas (art. 1º, §3º, V, “a”, Leis 10.637/2002 e 10.833/2003) |
+| **Análise jurídica** | Alinha-se ao conceito de receita bruta do DL 1.598/77 (exclusão de abatimentos na aquisição); modulação **não indicada** nas reportagens |
+| **Limitação** | Ausência, até 16/11/2026, de atualização oficial no portal de repetitivos com texto da tese |
+| **Impactos** | Varejo, atacado, distribuição; potencial recuperação de contribuições |
+| **Relevância** | **Alta** (com ressalva de confirmação documental) |
+| **Situação** | Julgamento concluído (noticiado); **publicação oficial do acórdão pendente** |
 
 ---
 
-### 2. CVM — Resolução 247/2026 (SCR)
+### 7. Consulta pública — Adicional da CSLL (GloBE / OCDE)
 
-1. **Datas:** Edição **05/10/2026**; vigência **01/11/2026** (início do intervalo).  
-2. **Fonte:** [Notícia CVM](https://www.gov.br/cvm/pt-br/assuntos/noticias/2026/cvm-aprimora-regras-sobre-envio-e-acesso-a-informacoes-do-sistema-de-informacoes-de-credito).  
-3. **Mudança:** Companhias **securitizadoras** enviam dados ao SCR; **administradores de FIDC** aprimoram envio e **gestores** podem consultar o SCR. Prazo de **12 meses** para securitizadoras.  
-4. **Impactos:** Governança de risco de crédito, due diligence em operações estruturadas.  
-5. **Relevância:** **Média** (segmento de capitais/securitização).
-
----
-
-### 3. CVM — Resolução 248/2026 (processos de normatização)
-
-1. **Datas:** 13/10/2026; DOU **14/10/2026**; vigência na publicação.  
-2. **Fonte:** [Resolução 248 — conteúdo CVM](https://conteudo.cvm.gov.br/legislacao/resolucoes/resol249.html) (página do índice); texto em [Atlas Público](https://atlaspublico.com.br/regulacao/dou/resolucao-cvm-n-248-de-13-de-outubro-de-2026-848903).  
-3. **Mudança:** Redefine “componente organizacional responsável” na Resolução CVM 67/2022; permite designação de membro do Colegiado; atribui minuta de relatório de consulta ao órgão condutor.  
-4. **Impactos:** Previsibilidade da agenda regulatória; transparência em consultas públicas futuras.  
-5. **Relevância:** **Baixa a média** (institucional).
+| Campo | Conteúdo |
+|-------|----------|
+| **Publicação** | 09/11/2026 |
+| **Prazo** | 06 a **16/11/2026** |
+| **Fonte** | https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/receita-federal-abre-consulta-publica-sobre-alteracao-da-in-do-adicional-da-csll |
+| **Objeto** | Alterações à IN RFB nº 2.228/2024 e à IN RFB nº 1.520/2014 (lucros no exterior, deduções, RSGAE/SESH) |
+| **Vigência proposta das alterações** | A partir de **01/01/2027** |
+| **Análise** | Continuidade da internalização do Pilar Dois; impacto em controladoras e grupos com QDMTT |
+| **Relevância** | **Alta** para multinacionais; **Média** para demais PJ |
+| **Situação** | Consulta pública encerrada em 16/11/2026 |
 
 ---
 
-### 4. CVM — Resolução 249/2026 (Programa Piloto DLT)
+### 8. Calculadora da Transação Tributária (RFB e PGFN)
 
-1. **Datas:** 13/10/2026; DOU **14/10/2026**.  
-2. **Fonte:** [Resolução CVM 249](https://conteudo.cvm.gov.br/legislacao/resolucoes/resol249.html).  
-3. **Mudança:** Sandbox para testes com DLT em emissão, oferta, negociação e liquidação de valores mobiliários.  
-4. **Impactos:** Inovação em captação e estruturação de dívidas/tokens com supervisão da CVM.  
-5. **Relevância:** **Média.**
-
----
-
-### 5. CVM — Resolução 251/2026 (agências de classificação de risco)
-
-1. **Datas:** Publicação institucional **09/11/2026**; vigência **01/12/2026**.  
-2. **Fonte:** [Notícia CVM](https://www.gov.br/cvm/pt-br/assuntos/noticias/2026/cvm-edita-norma-sobre-agencias-de-classificacao-de-risco-de-credito).  
-3. **Mudança:** Atualiza Resolução CVM 9/2020 (conflitos, metodologias, relatórios); alinhamento a padrões internacionais/equivalência UE.  
-4. **Impactos:** Emissores com rating para mercado externo; due diligence em debêntures e fundos.  
-5. **Relevância:** **Média.**
+| Campo | Conteúdo |
+|-------|----------|
+| **Publicação** | 09/11/2026 |
+| **Fonte** | https://www.gov.br/receitafederal/pt-br/assuntos/noticias/2026/novembro/receita-federal-disponibiliza-calculadora-para-apoiar-contribuintes-na-analise-de-opcoes-de-transacao-tributaria |
+| **Normas de fundo** | Edital PGFN nº 6/2026, prorrogado pelo Edital nº 10/2026 (**adesão até 29/01/2027, 19h**) — https://www.gov.br/pgfn/pt-br/servicos/orientacoes-contribuintes/acordo-de-transacao |
+| **Análise** | Ferramenta **orientativa**; não substitui simulação no Regularize/SISPAR |
+| **Relevância** | **Média** |
 
 ---
 
-### 6. CVM — Ofício Circular CVM/SMI 4/2026
+### 9. CONFAZ — Ato Declaratório nº 28, de 12 de novembro de 2026
 
-1. **Data:** 27/10/2026.  
-2. **Fonte:** [Notícia CVM](https://www.gov.br/cvm/pt-br/assuntos/noticias/2026/area-tecnica-da-cvm-informa-sobre-entrada-em-funcionamento-do-sistema-de-gestao-de-intermediarios).  
-3. **Mudança:** Sistema de Gestão de Intermediários em produção desde **23/10/2026** (cadastro, PL, DEC).  
-4. **Impactos:** Corretoras, distribuidoras, custodiantes — obrigações cadastrais e de conformidade.  
-5. **Relevância:** **Média.**
+| Campo | Conteúdo |
+|-------|----------|
+| **DOU** | 13/11/2026 |
+| **Fonte** | https://www.confaz.fazenda.gov.br/legislacao/atos-declaratorios/2026/ato-declaratorio-28-26 |
+| **Objeto** | Ratificação do **Convênio ICMS nº 125/26**, alterando o Convênio 79/2020 (parcelamento/dispensa de acréscimos em débitos de ICM/ICMS em UFs listadas) |
+| **Relevância** | **Média** (estadual; depende de adesão e regulamentação interna de cada UF) |
 
 ---
 
-### 7. DREI / registro empresarial
+### 10. STJ — julgamento em curso sobre benefícios da Lei 14.689/2023 (voto de qualidade no CARF)
 
-**No intervalo de 15 dias não foi identificada nova Instrução Normativa DREI publicada no DOU.**
+| Campo | Conteúdo |
+|-------|----------|
+| **Data** | 16/11/2026 (pedido de vista) |
+| **Fonte** | https://conjur.com.br/2026-nov-16/stj-julga-beneficio-do-carf-se-voto-de-qualidade-so-decide-decadencia/ |
+| **Processo** | REsp 2.244.413 |
+| **Questão** | Se os benefícios (dispensa de multa/juros, uso de PF/BCN) aplicam-se quando o voto de qualidade decidiu **apenas decadência**, sem mérito da exigência |
+| **Situação** | Julgamento **pendente** |
+| **Relevância** | **Alta** para contencioso administrativo federal |
 
-A página oficial de Ofícios Circulares lista o **OC 572/2026** (conselho de administração e DBE/CNPJ) e o **OC 92/2026** (debêntures por sociedade limitada — **09/02/2026**, fora do período, mas com repercussão operacional contínua nas Juntas) — [Ofícios Circulares DREI](https://www.gov.br/empresas-e-negocios/pt-br/drei/legislacao/oficios-circulares); [OC 92 — PDF oficial](https://www.gov.br/empresas-e-negocios/pt-br/drei/legislacao/oficios-circulares/arquivos/sei_57677695_oficio_circular_92.pdf).
+---
 
-**Decisão recursal sobre sócio falecido** (25/09/2026) permanece referência para dissolução parcial e liquidação de haveres, sem nova publicação DREI no período — [decisão no gov.br](https://www.gov.br/empresas-e-negocios/pt-br/drei/pareceres-drei/arquivos/2026/sei_64139010_decisao_de_recurso.pdf/@@display-file/file).
+### 11. CARF — multa regulamentar de IPI x Tema 487/STF
+
+| Campo | Conteúdo |
+|-------|----------|
+| **Data** | 04/11/2026 (reportagem) |
+| **Fonte** | https://bonettiassociados.com.br/2026/11/04/carf-nega-tese-do-stf-a-multa-regulamentar-do-ipi-por-notas-fiscais-irregulares/ |
+| **Processo** | 15746.720245/2021-43 |
+| **Desfecho** | Por voto de qualidade, **não aplicação** da tese do STF Tema 487 (consunção) à multa regulamentar de 150% do IPI por NF irregular |
+| **Análise** | Divergência administrativa com precedente vinculante — risco de judicialização |
+| **Relevância** | **Média** (caso concreto no CARF; sinal de tensão jurisprudencial) |
+
+---
+
+### 12. STJ — Tema 1.455 (cigarros): comunicação oficial em 16/11/2026
+
+| Campo | Conteúdo |
+|-------|----------|
+| **Julgamento** | 09/09/2026 (fora do período) |
+| **Notícia STJ** | 16/11/2026 |
+| **Fonte** | https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/16112026-Em-repetitivo--STJ-afasta-restituicao-de-PIS-e-Cofins-a-varejistas-de-cigarros-e-cigarrilhas.aspx |
+| **Tese** | Varejista de tabaco **não** restitui diferença de PIS/COFins entre preço tabelado com multiplicadores e venda efetiva |
+| **Relevância** | **Média** (setorial; reforço de tributação extrafiscal) |
+
+---
+
+## Parte III — Atualizações societárias e mercado de capitais
+
+### 1. Resolução CVM nº 250, de 5 de novembro de 2026
+
+| Campo | Conteúdo |
+|-------|----------|
+| **DOU** | 09/11/2026 (Seção 1, Extra) |
+| **Vigência** | **01/12/2026** |
+| **Fonte normativa** | https://conteudo.cvm.gov.br/legislacao/resolucoes/resol250.html · Notícia: https://www.gov.br/cvm/pt-br/assuntos/noticias/2026/cvm-atualiza-rol-de-certificacoes-aceitas-para-o-exercicio-da-atividade-de-consultoria-de-valores-mobiliarios |
+| **Alteração** | Resolução CVM nº 19/2021 — Anexo A (certificações para consultores de VM: C-Pro ANBIMA, CNCI APIMEC, EFP etc.; revogação de certificações antigas) |
+| **Grandfathering** | Arts. 2º–4º preservam credenciados até expirar certificação vigente; prazo de 180 dias para certificações substitutas |
+| **Análise** | Atualização da Agenda Regulatória 2026 sem AIR (art. 31 Res. CVM 67/2022) |
+| **Impactos** | Consultores independentes, boutiques de IR, compliance de intermediários |
+| **Relevância** | **Média** |
+
+---
+
+### 2. Resolução CVM nº 251, de 5 de novembro de 2026
+
+| Campo | Conteúdo |
+|-------|----------|
+| **DOU** | 09/11/2026 |
+| **Vigência** | **01/12/2026** |
+| **Fonte** | https://conteudo.cvm.gov.br/legislacao/resolucoes/resol251.html · https://www.gov.br/cvm/pt-br/assuntos/noticias/2026/cvm-edita-norma-sobre-agencias-de-classificacao-de-risco-de-credito |
+| **Alteração** | Resolução CVM nº 9/2020 (rating de crédito) |
+| **Objetivo declarado** | Convergência com exigências da UE para **equivalência** e atuação de agências brasileiras no exterior |
+| **Impactos** | Emissores com notas internacionais, debêntures, FIDCs, bancos de investimento |
+| **Relevância** | **Média-Alta** (mercado de capitais) |
+
+---
+
+### 3. Consulta pública CVM/SNC — Revisão do CPC 31
+
+| Campo | Conteúdo |
+|-------|----------|
+| **Início** | 06/11/2026 |
+| **Prazo contribuições** | **07/12/2026** |
+| **Fonte** | https://www.gov.br/cvm/pt-br/assuntos/noticias/2026/cvm-inicia-consulta-publica-relacionada-a-revisao-de-pronunciamento-tecnico-cpc-31 |
+| **Escopo** | Convergência IASB (IAS 28, IFRS 19, IAS 21 etc.) e reflexos do CPC 51 |
+| **Análise** | Impacto em demonstrações de companhias abertas, consolidadores e participações |
+| **Situação** | Consulta pública em curso |
+| **Relevância** | **Média** (efeitos após aprovação final do CPC) |
+
+---
+
+### 4. Ofício Circular CVM/SSE 04/26 — companhias securitizadoras
+
+| Campo | Conteúdo |
+|-------|----------|
+| **Data (legislação CVM)** | 16/11/2026 |
+| **Fonte** | https://conteudo.cvm.gov.br/legislacao/index.html?buscado=true&contCategoriasChec= |
+| **Tema** | Divulgação de informações ao mercado pelas companhias securitizadoras |
+| **Relevância** | **Média** (governança e transparência no mercado de securitização) |
+
+---
+
+### 5. STJ — Tema 1.414 — audiência pública (cartão de crédito consignado/RMC)
+
+| Campo | Conteúdo |
+|-------|----------|
+| **Convocação DJEN** | 11/11/2026 |
+| **Audiência** | **27/11/2026, 14h**, Brasília |
+| **Fonte** | https://www.stj.jus.br/sites/portalp/Paginas/Processos/Audiencias-publicas.aspx |
+| **Natureza** | Repetitivo em direito do consumidor com reflexos em instituições financeiras (societário/regulatório indireto) |
+| **Relevância** | **Média** (agenda contenciosa bancária) |
+
+---
+
+### 6. Direito societário registral (DREI/Juntas)
+
+No intervalo pesquisado **não foi identificada nova publicação no portal nacional do DREI** (gov.br/empresas-e-negocios) com data entre 01 e 16/11/2026 sobre distribuição de lucros, debêntures em Ltda. ou aprovação de contas. A **orientação sobre debêntures em sociedades limitadas** (Ofício Circular nº 92/2026) permanece válida, mas data de **fevereiro/2026**. Para Ltdas que estruturam captação via debêntures, o checkpoint regulatório CVM (Res. 160) segue recomendado.
 
 ---
 
 ## Parte IV — Jurisprudência relevante
 
 | Tribunal | Processo / Tema | Questão jurídica | Resultado / situação | Impacto prático | Link |
-|----------|-----------------|------------------|----------------------|-----------------|------|
-| STF | RE 592.616 — **Tema 118** | ISS na base do PIS/Cofins | Exclusão; modulação pendente | Recuperação para prestadores de serviços | [STF](https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=2637509&numeroTema=118) |
-| STF | RE 835.818 — **Tema 843** | Crédito presumido de ICMS na base | Inconstitucional incluir | Benefício a empresas com incentivos estaduais | [STF](https://portal.stf.jus.br/jurisprudenciarepercussao/verandamentoprocesso.asp?classeprocesso=re&incidente=4630911&numeroprocesso=835818&numerotema=843) |
-| STF | RE 1.495.108 — **Tema 1.348** | ITBI na integralização de capital | Imunidade, inclusive imobiliária | Holdings e aportes de imóveis | [STF](https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=6929423&numeroProcesso=1495108&numeroTema=1348) |
-| STF | ARE 1.593.784 — **Tema 1.455** (ED) | IPTU por área do imóvel | Modulação ex nunc desde 12/08/2026 | Revisão de lançamentos municipais | [STF](https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=ARE&incidente=7524215&numeroProcesso=1593784&numeroTema=1455) |
-| STF | **ADI 7.918** | Revogação ICMS Verde (AL) | Improcedência | Sinal para repartição de ICMS | [Notícia STF](https://noticias.stf.jus.br/postsnoticias/stf-mantem-extincao-do-icms-verde-em-alagoas/) |
-| STJ | REsp repetitivos — **Tema 1.364** | Crédito PIS/Cofins sobre ICMS na aquisição | Vedado (Lei 14.592/2023) | Glosa de créditos | [Informativo 906](https://scon.stj.jus.br/jurisprudencia/externo/informativo/?livre=%40CNOT%3D022675) |
-| STJ | REsp 2.294.977-SC (Inf. 908) | IPTU após cessão de posse | Proprietário registral responde | Risco em cessões de imóveis | [Boletim técnico](https://morais.tax/blog/boletim-semanal-stf-stj-30-de-outubro-a-5-de-novembro-de-2026/) |
-| CARF | Diversos (out/2026) | Conceito de insumo / alíquota zero / suspensão | Decisões casuísticas | Ajuste de créditos PIS/Cofins | *Acórdãos via e-CARF; reportagens em [Contadores.cnt.br](https://www.contadores.cnt.br/noticias/tecnicas/2026/10/27/carf-mantem-glosa-de-creditos-de-pis-e-cofins-e-rejeita-aplicacao-de-regime-de-suspensao-tributaria-em-operacoes-industriais.html)* |
+|----------|-----------------|------------------|---------------------|-----------------|------|
+| STF | RE 592.616 — **Tema 118** | ISS na base do PIS/COFins | Tese fixada 21/10/2026; petição PGFN 133153 indeferida 05/11/2026; acórdão em redação | Recuperação de créditos para prestadores de serviços; indefinição sobre modulação | https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=2637509&numeroTema=118 |
+| STJ | **Tema 1.412** (REsp 2.221.794 e correlatos) | Bonificações/descontos na base PIS/COFins | Julgamento noticiado 11/11/2026; acórdão pendente | Revisão de apuração no varejo | https://valor.globo.com/legislacao/noticia/2026/11/11/varejo-vence-no-stj-disputa-sobre-tributao-de-descontos-e-bonificaes.ghtml |
+| STJ | **Tema 1.455** (REsp 2.177.940, 2.215.075) | Restituição PIS/COFins em ST tabaco | Tese fixada (julg. 09/09/2026); notícia oficial 16/11/2026 | Fecha discussão para varejistas de cigarros | https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/16112026-Em-repetitivo--STJ-afasta-restituicao-de-PIS-e-Cofins-a-varejistas-de-cigarros-e-cigarrilhas.aspx |
+| STJ | REsp 2.244.413 | Lei 14.689/2023 e voto de qualidade só em decadência | Julgamento iniciado; **vista** 16/11/2026 | Define alcance de benefícios pós-CARF | https://conjur.com.br/2026-nov-16/stj-julga-beneficio-do-carf-se-voto-de-qualidade-so-decide-decadencia/ |
+| CARF | 15746.720245/2021-43 | Tema 487 STF x multa 150% IPI (NF irregular) | Fisco prevaleceu (voto de qualidade) | Alerta para estratégia em multas isoladas | https://bonettiassociados.com.br/2026/11/04/carf-nega-tese-do-stf-a-multa-regulamentar-do-ipi-por-notas-fiscais-irregulares/ |
+| STJ | **Tema 1.210** (jurisprudência consolidada; reiteração em nov/2026) | Desconsideração da PJ (art. 50 CC) | Teoria maior; insolvência isolada não basta | Defesa de sócios em incidentes de disregard | https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/2026/11062026-Pagina-de-Repetitivos-traz-necessidade-de-prova-de-abuso-para-desconsideracao-da-personalidade-juridica-.aspx |
 
 ---
 
 ## Parte V — Agenda regulatória e legislativa (30 / 60 / 90 dias)
 
-| Prazo | Evento | Data / status | Fonte |
-|-------|--------|---------------|-------|
-| **30 dias** | Publicação esperada da **versão 2.0** dos regulamentos CBS/IBS | Anúncio RFB (03/11/2026); **sem DOU até 09/11/2026** | [Valor](https://valor.globo.com/brasil/noticia/2026/11/04/cbs-e-ibs-devem-ter-nova-regra-em-breve.ghtml) |
-| **30 dias** | Acórdão e eventual **modulação** — Tema 118 (ISS) | Redação com min. Cármen Lúcia; embargos/suspensão nacional em discussão | [STF Tema 118](https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?incidente=2637509&numeroTema=118) |
-| **30 dias** | Adesão **PGDAU 12/2026** (FGTS/CS LC 110) | Até **29/01/2027** (janela aberta) | [PGFN](https://www.gov.br/pgfn/pt-br/servicos/editais-de-notificacao/acordo-de-transacao-por-adesao-1) |
-| **30 dias** | Vigência **Resolução CVM 251** | **01/12/2026** | [CVM](https://www.gov.br/cvm/pt-br/assuntos/noticias/2026/cvm-edita-norma-sobre-agencias-de-classificacao-de-risco-de-credito) |
-| **60 dias** | Efeitos **LC 238** e **CGSN 195** / Decreto 13.140 | **01/01/2027** | [LC 238](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp238.htm) |
-| **60 dias** | Consultas públicas CVM (SNC 01/26 e 02/26 — CPC fundos) | Abertas em **05/10/2026** (prazos conforme edital) | [Destaques CVM out/2026](https://www.gov.br/cvm/pt-br/assuntos/noticias/2026/destaques-da-cvm-em-outubro) |
-| **90 dias** | Transição documental IBS/CBS e testes de apuração 2026 | Cronograma constitucional mantido pela RFB | [Receita — Reforma](https://www.gov.br/receitafederal/pt-br/acesso-a-informacao/acoes-e-programas/reforma-tributaria-do-consumo/legislacao/atos-conjuntos) |
-| **Expectativa** | PLPs e MPs sobre reforma (detalhes operacionais, split payment) | Sem ato publicado no período | — |
+### Datas oficialmente confirmadas ou atos publicados
 
-*Distinção: linhas com data oficial confirmada vs. previsão baseada em comunicação oficial ou imprensa especializada.*
+| Prazo | Evento | Fonte / observação |
+|-------|--------|-------------------|
+| **até 16/11/2026** | Encerramento consulta pública IN Adicional CSLL (GloBE) | RFB, 09/11/2026 |
+| **até 07/12/2026** | Contribuições à consulta CPC 31 (CVM/CPC/CFC) | CVM, 06/11/2026 |
+| **15/12/2026** | 1ª entrega mensal DeRE (competência nov/2026) | Ato Conjunto RFB/CGIBS 7/2026 |
+| **19/11/2026** | Inscrições audiência pública STJ Tema 1414 | STJ, DJEN 11/11/2026 |
+| **27/11/2026** | Audiência pública STJ (cartão consignado) | STJ |
+| **29/01/2027** | Fim adesão transação PGFN (Editais 6 e 10/2026) | PGFN |
+| **01/12/2026** | Vigência Resoluções CVM 250 e 251 | DOU 09/11/2026 |
+| **01/01/2027** | Múltiplos DF-e e eventos DeRE transacionais | Ato Conjunto 7/2026 |
+| **01/03/2027** | NF-e/NFC-e Simples, plataformas digitais, transporte passageiros (bloco do ato) | Ato Conjunto 7/2026 |
+| **PA 11–12/2026** | FS12 obrigatório no PGDAS-D | RFB 13/11/2026 |
+
+### Expectativas (não confirmadas em DOU até 16/11/2026)
+
+| Horizonte | Evento | Observação |
+|-----------|--------|------------|
+| 30 dias | Publicação Regulamento IBS/CBS v2.0 | Anúncio 11–13/11; dependência de assinatura presidencial |
+| 60 dias | Novos atos conjuntos RFB/CGIBS (coletiva RFB, início de dez/2026) | Monitorar DOU e portais RTC/CGIBS |
+| 90 dias | Normatização pós-consulta GloBE (jan/2027) | Proposta com vigência 01/01/2027 |
+
+### Projetos e temas sem movimento relevante confirmado no período
+
+- **IRPJ/CSLL sobre tributação de dividendos (Lei nº 15.270/2025):** sem nova IN ou decisão STF no recorte; obrigações EFD-Reinf/DCTFWeb já em curso desde 2026.
+- **Impeditivo Seletivo:** sem ato federal novo localizado em 01–16/11/2026.
+- **Ratificação nacional Convênio ICMS 131/2026** (benefícios até 2028): convênio de 29/10; ratificações estaduais em andamento — verificar UF a UF.
 
 ---
 
 ## Parte VI — Recomendações estratégicas
 
-### Tributário
-- Recalcular bases de **PIS/Cofins** à luz dos Temas **118**, **843** e **1.364**, segregando ICMS, ISS e incentivos presumidos.  
-- Mapear **oportunidades de recuperação** (compensação/restituição) com análise de modulação e prescrição.  
-- Acelerar **roadmap de DF-e** conforme Ato Técnico 10/2026 e painéis RFB/CGIBS.  
-- MEIs: plano de **adimplência jan–jun/2027** para preservar remissão (LC 238); tratamento de litígios pendentes.  
-- Avaliar **transações PGFN** (Edital 12) para débitos de FGTS/CS não abrangidos pela LC 238.  
-- Monitorar diariamente o DOU quanto à **versão 2.0** CBS/IBS.
-
-### Societário e mercado de capitais
-- Revisar **integralizações de imóveis** à luz do Tema **1.348**; documentar substância e valor de integralização.  
-- Operações com **SCR/FIDC/securitizadoras**: adequar fluxos à Resolução **247**.  
-- Intermediários CVM: atualizar cadastro no **Sistema de Gestão de Intermediários** (OC SMI 4/2026).  
-- Estruturação de **debêntures em Ltda.**: conferir orientação DREI/CVM e registro na Junta.  
-- Programa **DLT**: avaliar adesão experimental para produtos financeiros (Res. 249).
-
-### Contencioso e governança
-- Atualizar matriz de risco fiscal com teses vinculantes recentes.  
-- Em autuações de **distribuição de lucros com débito fiscal**, cruzar precedentes (ex.: ADI 5.161, julgada em 30/09/2026 — *fora do intervalo, mas aplicável*).  
-- Reforçar política de **autorregularização** para participantes Selo Confia/Sintonia (IN 2.346).
+1. **Governança de implementação RTC:** montar matriz única cruzando Ato Conjunto 7/2026, PGDAS-D, Calculadora GitHub e cronograma DeRE; responsável: CFO + TI até 15/12/2026.
+2. **PIS/COFins — serviços e varejo:** (a) mapear ISS na base (Tema 118); (b) para varejo, preparar revisão de bonificações (Tema 1.412) aguardando DJe; evitar provisão agressiva sem acórdão.
+3. **Simples Nacional:** executar FS12 nos PA 11 e 12/2026 com conciliação eSocial; planejar migração mental para competência integral em 2027.
+4. **Multinacionais:** monitorar minuta pós-consulta IN 2.228/1.520; simular SESH/RSGAE antes de 01/01/2027.
+5. **Dívida ativa federal:** usar calculadora RFB (09/11) + CAPAG no Regularize até 29/01/2027; comparar transação PGFN x parcelamento ordinário.
+6. **Mercado de capitais:** adequar compliance de consultores (Res. CVM 250) e contratos com rating (Res. CVM 251) até 30/11/2026.
+7. **Contencioso administrativo:** acompanhar STJ REsp 2.244.413 (voto de qualidade CARF) antes de liquidação com benefícios da Lei 14.689/2023.
+8. **Societário/defesa de sócios:** invocar Tema 1.210 (prova de abuso) em IDPJ; não confundir com esferas tributária/trabalhista.
 
 ---
 
@@ -296,67 +345,24 @@ A página oficial de Ofícios Circulares lista o **OC 572/2026** (conselho de ad
 
 ### Oportunidades
 
-1. **Exclusão do ISS da base do PIS/Cofins (Tema 118)**  
-   - *Relevância:* redução permanente de carga para prestadores de serviços.  
-   - *Fundamento:* tese fixada em 21/10/2026, alinhada ao Tema 69.  
-   - *Medida:* revisar apurações, depósitos judiciais e ações repetitivas; aguardar modulação para definir alcance retroativo.
-
-2. **Imunidade de ITBI em integralização de capital, inclusive imobiliárias (Tema 1.348)**  
-   - *Relevância:* economia em reorganizações patrimoniais e holdcos.  
-   - *Fundamento:* CF, art. 156, § 2º, I; tese STF 20/10/2026.  
-   - *Medida:* estruturar integralizações com laudo, limite ao capital e cláusulas anti-simulação.
-
-3. **Remissão de débitos federais do MEI (LC 238/2026)**  
-   - *Relevância:* extinção automática de passivo previdenciário significativo.  
-   - *Fundamento:* arts. 5º–7º LC 238; Portaria Conjunta 740/2026.  
-   - *Medida:* calendário de DAS em dia; desistência de ações se necessário; não contar com restituição.
-
-4. **Exclusão de créditos presumidos de ICMS da base (Tema 843)**  
-   - *Relevância:* impacto em cadeias com incentivos estaduais.  
-   - *Fundamento:* RE 835.818, julgado 07/10/2026.  
-   - *Medida:* segregar bases por estabelecimento e estado; preparar pedidos de restituição.
-
-5. **Simplificação fiscal de MEI/nano na transição IBS/CBS**  
-   - *Relevância:* redução de custo de compliance.  
-   - *Fundamento:* Decreto 13.140/2026 e Resolução CGSN 195/2026.  
-   - *Medida:* adequar procedimentos de faturamento a partir de 01/01/2027; validar enquadramento nano vs. MEI.
+| # | Oportunidade | Fundamento | Medida prática |
+|---|--------------|------------|----------------|
+| 1 | Recuperação PIS/COFins com ISS segregado | STF Tema 118 (RE 592.616) | Diagnóstico por estabelecimento; PER/DCOMP/contencioso com trânsito ou modulação futura |
+| 2 | Redução de base PIS/COFins por bonificações | STJ Tema 1.412 (noticiado 11/11) | Mapear contratos com fornecedores; suspender inclusão indevida após confirmação DJe |
+| 3 | Integração RTC com lógica oficial de cálculo | Portaria Cotec 342 + repositórios GitHub | Incorporar calculadoras em testes de regressão ERP |
+| 4 | Regularização fiscal negociada | Edital PGFN 6/10/2026 + Calculadora 09/11 | Cenários de transação até 29/01/2027 |
+| 5 | Adiamento operacional DeRE/DF-e | Ato Conjunto 7/2026 | Replanificar sprint de TI para 15/12/2026 e 01/01/2027 |
 
 ### Riscos
 
-1. **Incerteza da versão 2.0 dos regulamentos CBS/IBS**  
-   - *Relevância:* parametrização de ERP e risco de mudança sem prazo de adaptação.  
-   - *Fundamento:* comunicação RFB (nov/2026); ausência de publicação até 09/11/2026.  
-   - *Medida:* parametrizar o já aprovado (Ato Técnico 10/2026); contingência de retrabalho.
-
-2. **Modulação indefinida do Tema 118**  
-   - *Relevância:* recuperação retroativa incerta.  
-   - *Fundamento:* julgamento 21/10/2026; modulação postergada.  
-   - *Medida:* não abandonar defesas administrativas até definir efeitos; modelar cenários.
-
-3. **Cancelamento da remissão do MEI por inadimplência em 2027**  
-   - *Relevância:* recomposição integral do passivo remido.  
-   - *Fundamento:* LC 238, art. 5º, § 4º; FAQ PGFN.  
-   - *Medida:* controle mensal do DAS; comunicação clara ao cliente MEI.
-
-4. **Vedação ao crédito de PIS/Cofins sobre ICMS das aquisições (Tema 1.364/STJ)**  
-   - *Relevância:* aumento de custo líquido em indústria e comércio.  
-   - *Fundamento:* Lei 14.592/2023; julgamento STJ 14/10/2026.  
-   - *Medida:* revisar planilhas de crédito; ajustar preços e contratos.
-
-5. **Questionamento de reorganizações por simulação (ITBI / CARF)**  
-   - *Relevância:* multas, glosas e responsabilização de administradores.  
-   - *Fundamento:* ressalva do Tema 1.348; precedentes CARF sobre confusão patrimonial (out/2026).  
-   - *Medida:* substance over form, contratos de mútuo/fretes com respaldo econômico; documentação de governança.
+| # | Risco | Fundamento | Medida prática |
+|---|-------|------------|----------------|
+| 1 | Conformidade documental desalinhada com IBS/CBS | Ato Conjunto 7/2026 | Matriz por operação/regime; não misturar calendário Simples nacional com RTC |
+| 2 | Penalidades por PGDAS-D incompleto (FS12) | RFB 13/11/2026 | Conferir folha consolidada antes do DAS nov/dez |
+| 3 | Incerteza de modulação Tema 118 | STF (sem marco temporal definitivo no período) | Não contabilizar crédito em massa sem parecer modulação/acórdão |
+| 4 | Tese repetitiva sem publicação oficial (Tema 1.412) | STJ portal ainda “afetado” | Aguardar DJe; manter provisões conservadoras |
+| 5 | Divergência CARF x STF em multas IPI | Acórdão CARF 04/11/2026 vs Tema 487 | Avaliar judicialização e não homogeneizar tese em todos os processos |
 
 ---
 
-## Limitações da pesquisa
-
-- Até **09/11/2026**, não foi confirmada no DOU a **versão 2.0** integral dos regulamentos de CBS/IBS, apesar de declaração pública da RFB.  
-- Acórdãos finais de alguns julgados STF (Temas 118 e 843) ainda em fase de redação/publicação integral; modulação do Tema 118 pendente.  
-- Decisões do **CARF** foram mapeadas principalmente por síntese técnica; recomenda-se consulta ao inteiro teor no e-CARF para números de processo e fundamentos completos.  
-- **DREI:** ausência de nova instrução normativa no intervalo; atos administrativos pontuais podem não constar imediatamente no site.
-
----
-
-*Boletim elaborado com base em pesquisa efetiva em fontes públicas na data indicada. Prognósticos e impactos financeiros quantitativos dependem de dados internos de cada contribuinte.*
+*Boletim elaborado com base em pesquisa efetiva na internet em 16/11/2026. Fatos sem confirmação em fonte primária estão sinalizados. Não constitui parecer jurídico individualizado.*
